@@ -1,0 +1,56 @@
+{
+  "pages": [
+    "pages/load/load",
+    "pages/jiaxiaoruzhu/jiaxiaoruzhu",
+    "pages/tese/tese",
+    "pages/process-pay/process-pay",
+    "pages/process/process",
+    "pages/driving/driving",
+    "pages/index/index",
+    "pages/archives/archives",
+    "pages/map/map",
+    "pages/pay-list/pay-list",
+    "pages/jiaolian/jiaolian",
+    "pages/science/science",
+    "pages/brief/brief",
+    "pages/details/details",
+    "pages/news-details/news-details",
+    "pages/news/news",
+    "pages/order/order",
+    "pages/ranking/ranking",
+    "pages/comment/comment",
+    "pages/me/me"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#ffd34e",
+    "navigationBarTitleText": "海贝易通Car联盟",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#363636",
+    "backgroundColor": "#fff",
+    "borderStyle": "black",
+    "selectedColor": "#363636",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "image/index.png",
+        "selectedIconPath": "image/index-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "iconPath": "image/me.png",
+        "selectedIconPath": "image/me-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+  "sitemapLocation": "sitemap.json"
+}

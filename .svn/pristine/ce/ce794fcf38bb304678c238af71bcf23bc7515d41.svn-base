@@ -1,0 +1,87 @@
+<view class='top'>
+  <swiper autoplay="true" circular="true" > 
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+         <image src="{{imgUrls[index].banner}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> 
+
+<view class='nav'>
+  <navigator hover-class='none' url='../ranking/ranking'>
+  <image src='../../image/icon_02.png'></image>
+  <text>驾校排行</text>
+  </navigator>
+
+  <navigator hover-class='none' url='../archives/archives'>
+  <image src='../../image/icon_06.png'></image>
+  <text>报名流程</text>
+  </navigator>
+
+  <navigator hover-class='none' url='../news/news'>
+    <image src='../../image/icon_09.png'></image>
+    <text>行业资讯</text>
+  </navigator>
+
+  <button open-type="contact">
+    <image src='../../image/icon_04.png'></image>
+    <text>客服中心</text>
+  </button>
+</view>
+
+<view class='guang'>
+  <image src='http://47.95.245.138:9011/banner/59d64270e9fd465e89d47a6d568a47b2.jpg'></image>
+  <view class='guang-top'>
+    <text>安康市运通驾校</text>
+    <text>C1、C2</text>
+  </view>
+  <view class='guang-bot'>
+    <text>总校直招，自建考场，规模强大</text>
+    <text>立减￥400</text>
+  </view>
+</view>
+
+<view class='mine'>
+  <picker class='jz'>
+    <view>C1</view>
+  </picker>
+  <view class='mine-nav'>
+    <view class="mine-tab {{tab==1?'active':''}}" bindtap='navTab' data-id="1">推荐</view>
+    <view class="mine-tab {{tab==2?'active':''}}"  bindtap='navTab' data-id="2">距离</view>
+    <view class="mine-tab {{tab==3?'active':''}}"  bindtap='navTab' data-id="3">足迹</view>
+  </view>
+
+  <view class='nav-t'>
+    <view class='nav-t-tit'>筛选</view>
+    <scroll-view class='nav-t-bot' scroll-x="true" style=" white-space: nowrap; display: flex" >
+      <text class='nav-t-con'>普通班</text>
+      <text class='nav-t-con'>夜班</text>
+      <text class='nav-t-con'>1对2</text>
+      <text class='nav-t-con'>加急特权</text>
+      <text class='nav-t-con'>加急特权</text>
+      <text class='nav-t-con'>加急特权</text>
+      <text class='nav-t-con'>加急特权</text>
+    </scroll-view>
+  </view>  
+
+  <navigator class='list' hover-class='none' url='../details/details?id={{school[index].id}}' wx:for="{{school}}" wx:key="index">
+    <view class='list-l'>
+      <image src='{{school[index].school_icon}}'></image>
+      <view class='list-l-r'>
+        <view class='tit'>{{school[index].school_location}}</view>
+        <view class='pingfen'>
+          <image src='../../image/pingfen.png'></image><text>{{school[index].star}}</text>
+        </view>
+        <view class='price'>
+          <text style='color:#ff4d65'>￥{{school[index].price}}</text> <text style='margin:0 16rpx'>{{school[index].subject}}</text> <text>{{school[index].subject_name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='list-r'>
+      <view class='list-r-t'>距离{{school[index].distance/1000}}km</view>
+      <view class='list-r-b'>驾校排行榜<text style='color:#ff4d65'>第{{school[index].orders}}位</text></view>
+    </view>
+  </navigator>
+</view>
+

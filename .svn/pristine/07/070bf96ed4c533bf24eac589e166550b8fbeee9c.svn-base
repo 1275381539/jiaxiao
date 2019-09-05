@@ -1,0 +1,133 @@
+const app = getApp()
+Page({
+  data: {
+    imgUrls: [],
+    tab:0,
+    school:[],  //驾校信息
+    latitude:'',  // 用户当前纬度
+    longitude: '',  // 用户当前经度
+    jHinde: 0,
+    jiazhao:[],
+    mark: [],
+    typeobj:[]
+  },
+  //tab切换
+  navTab:function(e){
+    let uid = wx.getStorageSync('uid')
+    var that = this;
+    that.setData({
+      tab: e.currentTarget.dataset.id
+    })
+    let lat = wx.getStorageSync('latitude')
+    let lng = wx.getStorageSync('longitude')
+    wx.request({ // 获取所有信息
+      url: app.globalData.url + '/wx/index/index.html',
+      data: {
+        uid: uid,
+        lat: lat,
+        lng: lng,
+        driving_type: that.data.typeobj[that.data.jHinde].id,
+        type: that.data.tab,
+        selection: ''
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        var ret = res.data;
+        if (ret.success) {
+          that.setData({
+            school: ret.data.school
+          })
+        }
+      }
+    })
+  },
+  // 选择驾照
+  jiazhao: function (e) {
+    let uid = wx.getStorageSync('uid')
+    var that = this;
+    that.setData({
+      jHinde: e.detail.value
+    })
+    let lat = wx.getStorageSync('latitude')
+    let lng = wx.getStorageSync('longitude')
+    wx.request({ // 获取所有信息
+      url: app.globalData.url + '/wx/index/index.html',
+      data: {
+        uid: uid,
+        lat: lat,
+        lng: lng,
+        driving_type: that.data.typeobj[e.detail.value].id,
+        type:that.data.tab,
+        selection:''
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        var ret = res.data;
+        if (ret.success) {
+          that.setData({
+            school: ret.data.school
+          })
+        }
+      }
+    })
+  },
+  // 筛选
+  shai:function(e){
+    var index = e.currentTarget.dataset.index;
+    var item = this.data.mark[index];
+    item.flg = !item.flg;
+    this.setData({
+      mark: this.data.mark,
+    })
+
+  },
+  //事件处理函数
+  onLoad: function () {
+    let uid = wx.getStorageSync('uid')
+    var that = this;
+    // 获取当前位置的经纬度
+    wx.getLocation({
+      type: 'gcj02',
+      success(res) { 
+        wx.setStorageSync('latitude', res.latitude) // 存储用户的经纬度
+        wx.setStorageSync('longitude', res.longitude)// 存储用户的经纬度
+        wx.request({ // 获取所有信息
+          url: app.globalData.url + '/wx/index/index.html',
+          data: {
+            uid: uid,
+            lat: res.latitude,
+            lng: res.longitude
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded',
+          },
+          method: 'POST',
+          success: function (res) {
+            var ret = res.data;
+            wx.setStorageSync('jiazhao', ret.data.user.subjecttype.subject_type) // 驾照类型
+            if (ret.success) {
+              that.setData({
+                school: ret.data.school,
+                imgUrls: ret.data.wheel,
+                jiazhao: ret.data.type,
+                typeobj: ret.data.typeobj,
+                mark:ret.data.mark
+              })
+            }
+          }
+        })
+      }
+    })
+  },
+  onReady: function () {
+    
+  },
+  onShow: function () {
+  }
+})

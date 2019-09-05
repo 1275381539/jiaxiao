@@ -1,0 +1,23 @@
+<!-- 授权页面 -->
+<view wx:if="{{isHide}}">
+  <swiper circular="true" indicator-dots="true" indicator-active-color="#ffc704" indicator-color="#efefef"	> 
+    <block>
+      <swiper-item>
+         <image src="../../image/load1.png"/>
+         <view class='tit'>服务驾驶培训行业</view>
+         <text class='con'>打造一流学车体验</text>
+      </swiper-item>
+      <swiper-item>
+         <image src="../../image/load2.png"/>
+         <view class='tit'>海贝易通</view>
+         <text class='con'>让招生更简单</text>
+      </swiper-item>
+      <swiper-item>
+         <image src="../../image/load3.png"/>
+         <view class='tit'>基于O2O模式</view>
+         <text class='con'>互联网+驾培业务平台</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"><image src='../../image/weixin.png'></image>微信快捷登录</button>
+</view>

@@ -1,0 +1,87 @@
+page{
+  background: #efefef;
+}
+.box{
+  background: #fff;
+  width: 700rpx;
+  margin: 30rpx auto;
+  border-radius: 20rpx;
+  padding: 50rpx 20rpx;
+  box-sizing: border-box;
+}
+.title{
+  color: #2b2b2b;
+  font-size: 36rpx;
+  font-weight: bold;
+  text-align: center;
+  position: relative;
+}
+.title::before{
+  content: "";
+  width: 10rpx;
+  height: 10rpx;
+  background: #ffc34a;
+  top: 20rpx;
+  left:160rpx;
+  position: absolute;
+  border-radius: 50%;
+}
+.title::after{
+  content: "";
+  width: 10rpx;
+  height: 10rpx;
+  background: #ffc34a;
+  top: 20rpx;
+  right:160rpx;
+  position: absolute;
+  border-radius: 50%;
+}
+.con{
+  font-size: 30rpx;
+  margin: 40rpx 0;
+  padding-left:6%;
+}
+.con text{
+  display: inline-block;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 20%;
+  position: relative;
+}
+.con text::before{
+  content: "";
+  width:30rpx;
+  height: 30rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/pingfen.png) no-repeat;
+  background-size: 30rpx;
+  position: absolute;
+  top: 10rpx;
+  left:-40rpx;
+}
+.con input{
+  width: 70%;
+  display: inline-block;
+  border: 1px solid #999;
+  border-radius: 10rpx;
+  overflow:	visible; 
+  padding-left: 30rpx;
+}
+.btn{
+  width: 210rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  background-image: linear-gradient(to right , #07e8e0, #1eb1f4);
+  text-align: center;
+  color: #fff;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}
+.tishi{
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-top: 20rpx;
+}

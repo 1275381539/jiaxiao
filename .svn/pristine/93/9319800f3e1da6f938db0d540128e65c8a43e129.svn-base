@@ -1,0 +1,34 @@
+var app = getApp();
+Page({
+  data: {
+    keshi: '', 
+    none1: false,
+    none2: false,
+    none3: false,
+    none4: false,
+  },
+  // none:function(e){
+  //   var d = e.currentTarget.dataset.id;
+  //   var that = this
+  // },
+  onLoad: function (ops) {
+    var that = this;
+    wx.request({
+      url: app.globalData.url + '/wx/index/hour.html',
+      data: {
+        uid: ops.uid,
+        id:ops.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: res => {
+        var ret = res.data;
+        that.setData({
+          keshi: ret.data
+        })
+      }
+    })
+  }
+})

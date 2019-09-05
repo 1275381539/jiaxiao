@@ -1,0 +1,52 @@
+.tetx{
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  width: 700rpx;
+  margin:0 auto;
+  margin-top: 30rpx;
+  height: 400rpx;
+}
+.tetx textarea{
+  width: 100%;
+  font-size: 26rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.start{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.start-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 30rpx;
+}
+.start-list{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  margin: 20rpx 0;
+}
+.start-list image{
+  width: 40rpx;
+  height:40rpx;
+  vertical-align: middle;
+  margin: 0 10rpx;
+}
+.fabu{
+  width: 260rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background-image: linear-gradient(to right , #07e8e0, #1eb1f4);
+  color: #fff;
+  position: fixed;
+  bottom: 100rpx;
+  left: 50%;
+  margin-left: -130rpx;
+  border-radius:50rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}

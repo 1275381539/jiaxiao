@@ -1,0 +1,123 @@
+page{
+  background: #f2f2f2;
+}
+.mine-nav{
+  width: 700rpx;
+  margin: 30rpx auto;
+  height: 64rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.mine-nav .mine-tab{
+  width: 33%;
+  display: inline-block;
+  line-height: 64rpx;
+  position: relative;
+  font-size: 30rpx;
+  color: #666;
+}
+.mine-nav .mine-tab.active{
+  color: #333;
+  font-weight: bold;
+}
+.active::after{
+  content: "";
+  width: 80rpx;
+  height: 6rpx;
+  background: #ffd34e;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -40rpx;
+}
+.list{
+  width: 700rpx;
+  background: #fff;
+  overflow: hidden;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+  font-size: 26rpx;
+  margin-bottom: 30rpx;
+}
+.list-top{
+  overflow: hidden;
+  margin-bottom: 30rpx;
+}
+.list-top-l{
+  float: left;
+}
+.list-top-r{
+  float: right;
+  color: #999;
+  font-size: 30rpx;
+}
+.list-top-l text{
+  color: #242424;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.list-top-l image{
+  width: 50rpx;
+  height: 50rpx;
+  border-radius: 50%;
+  vertical-align: middle;
+  margin-right: 16rpx;
+}
+.con{
+  margin-left:66rpx;
+  border-top: 1px solid #ececec;
+  padding-top: 26rpx;
+  overflow: hidden;
+  color: #242424;
+  font-size: 28rpx;
+  margin-bottom: 16rpx;
+}
+.con-l{
+  float: left;
+}
+.con-r{
+  float: right;
+}
+.label{
+  color: #5b5b5b;
+  margin-left:66rpx;
+  margin-bottom: 30rpx;
+}
+.label text{
+  border: 1px solid #d6d6d6;
+  margin-right: 20rpx;
+  border-radius: 30rpx;
+  padding: 4rpx 20rpx;
+}
+.time{
+  margin-left:66rpx;
+  color: #5b5b5b;
+  font-size: 24rpx;
+  margin-bottom: 20rpx;
+}
+.btn{
+  overflow: hidden;
+  float: right;
+}
+.btn view{
+  float: left;
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  margin-left: 20rpx;
+  text-align: center;
+  border-radius: 30rpx;
+}
+.cancel{
+  border: 1px solid #d6d6d6;
+  color: #777;
+}
+.pay{
+  background:#ffd34e;
+  color: #333;
+  font-weight: bold;
+  border: 1px solid #ffd34e;
+}

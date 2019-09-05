@@ -1,0 +1,199 @@
+.top{
+  width: 100%;
+  height: 300rpx;
+  background-image: linear-gradient( #ffd34e 60%, #fff);
+  position: relative;
+}
+.header{
+  width: 700rpx;
+  height: 350rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 25rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.3);
+  text-align: center;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.header image{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+}
+.name{
+  color: #464646;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+}
+.jx-name{
+  font-size: 26rpx;
+  color: #686868;
+  border: 1px solid #686868;
+  border-radius: 30rpx;
+  padding: 2rpx 14rpx;
+}
+.list{
+  width: 600rpx;
+  margin: 0 auto;
+  color: #333;
+  font-size: 30rpx;
+  padding-left: 40rpx;
+}
+.list navigator{
+ height: 120rpx;
+ border-bottom: 1px solid #ebebeb;
+ line-height: 120rpx;
+ position: relative;
+}
+.list navigator:nth-of-type(1)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/tubiao5.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list navigator:nth-of-type(2)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/tubiao2.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list navigator:nth-of-type(3)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/tubiao4.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list navigator:nth-of-type(4)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/tubiao3.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list navigator:nth-of-type(5)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/tubiao1.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list button{
+  border-radius:0;
+  background:none;
+  text-align: left;
+  padding: 0;
+  height: 120rpx;
+  color: #333;
+  font-size: 30rpx;
+  line-height: 120rpx;
+  position: relative;
+}
+button::after{
+border:none;
+}
+.tese{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 170rpx;
+}
+.tese image{
+  width: 100%;
+  height: 110rpx;
+}
+.act{
+  margin-top: 130rpx
+}
+.speed{
+  font-size: 24rpx;
+  color: #333;
+  width: 580rpx;
+  margin: 0 auto;
+  padding-top: 50rpx;
+  overflow: hidden;
+}
+.speed view{
+  width: 25%;
+  float: left;
+  position: relative;
+  
+}
+.speed view::before{
+  content: '';
+  width: 12rpx;
+  height: 12rpx;
+  background: #adadad;
+  border-radius: 50%;
+  position: absolute;
+  top: -20rpx;
+  left: 60rpx;
+}
+.speed view::after{
+  content: '';
+  width: 120rpx;
+  height: 4rpx;
+  background: #d7d7d7;
+  position: absolute;
+  top: -16rpx;
+  left:-66rpx;
+}
+.speed view:first-child::after{
+  display: none;
+}
+.speed view.completed::before{
+  content: '';
+  width: 30rpx;
+  height:30rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/completed.png) no-repeat;
+  background-size: 30rpx;
+  position: absolute;
+  top: -30rpx;
+  left: 50rpx;
+}
+.speed view.loading::after{
+  content: '';
+  width: 110rpx;
+  height: 4rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/gif.gif) no-repeat;
+  position: absolute;
+  top: -16rpx;
+  left:-66rpx;
+}
+.speed view.loading::before{
+  content: '';
+  width: 30rpx;
+  height:30rpx;
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/loading.png) no-repeat;
+  background-size: 30rpx;
+  position: absolute;
+  top: -30rpx;
+  left: 50rpx;
+}
+.speed::after{
+  content: '';
+  clear: both;
+}

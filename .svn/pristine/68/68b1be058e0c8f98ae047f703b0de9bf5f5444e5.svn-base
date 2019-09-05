@@ -1,0 +1,97 @@
+<view class='top'>
+  <view class='con'>
+    <view class='con-l'><image src='../../image/me-header.png'></image></view>
+    <view class='con-r'>
+      <view class='name'>教练姓名</view>
+      <view class='pingfen'>
+        <image src='../../image/pingfen.png'></image>
+        <image src='../../image/pingfen.png'></image>
+        <image src='../../image/pingfen.png'></image>
+        <image src='../../image/pingfen.png'></image>
+        <text>4.8分</text>
+      </view>
+      <view class='xinxi'>
+        <text style='color:#0096ff'>运通驾校</text>
+        <text class='i'></text>
+        <text>学员1026</text>
+        <text class='i'></text>
+        <text>教龄10年</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='con-text'>
+  <text class='con-text-tit'>教练简介</text>
+  <text class='con-text-con'>教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人教练不骂人不打人</text>
+</view>
+
+ <view class='science'>
+  <navigator class='science-box' url='../science/science'>
+    <view class='science-tit'>教学环境</view>
+    <view class='science-img'>
+      <image src='../../image/news.png'></image>
+      <image src='../../image/news.png'></image>
+      <image src='../../image/news.png'></image>
+    </view>
+  </navigator>
+ </view>
+
+ <view class='evaluate'>
+  <view class='evaluate-box'>
+    <view class='science-tit'>学员评价</view>
+    <view class='evaluate-num'><text>好评(99)</text><text>中评(4)</text><text>差评(0)</text></view>
+
+    <view class='evaluate-list'>
+      <view class='evaluate-list-top'>
+        <view class='evaluate-list-img'><image src='../../image/me-header.png'></image></view>
+        <view class='evaluate-list-name'>
+          <view>学员姓名</view>
+          <view style='font-size:24rpx;color:#666666'>2019-06-30</view>
+        </view>
+      </view>
+      <view class='evaluate-list-con'>
+        驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好
+      </view>
+      <view class='huifu'>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view class='huifu-input'>
+          <input value='' type='text' placeholder='评论' confirm-type='done'></input>
+        </view>
+      </view>
+    </view>
+
+    <view class='evaluate-list'>
+      <view class='evaluate-list-top'>
+        <view class='evaluate-list-img'><image src='../../image/me-header.png'></image></view>
+        <view class='evaluate-list-name'>
+          <view>学员姓名</view>
+          <view style='font-size:24rpx;color:#666666'>2019-06-30</view>
+        </view>
+      </view>
+      <view class='evaluate-list-con'>
+        驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好
+      </view>
+            <view class='huifu'>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view class='huifu-input'>
+          <input value='' type='text' placeholder='评论' confirm-type='done'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+ </view>

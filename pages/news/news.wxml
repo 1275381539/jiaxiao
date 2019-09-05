@@ -1,0 +1,4 @@
+<navigator class='list' url='../news-details/news-details?id={{list[index].id}}' wx:for="{{list}}" wx:key="index"> 
+  <image src="{{'http://admin.jxiao.chaojibuyers.com' + list[index].thumb}}"></image>
+  <view>{{list[index].title}}</view>
+</navigator>

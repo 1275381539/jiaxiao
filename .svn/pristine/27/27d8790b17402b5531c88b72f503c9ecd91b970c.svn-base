@@ -1,0 +1,21 @@
+<view class='tetx'>
+  <textarea placeholder='请谈谈你对驾校或者教练的看法'></textarea>
+</view>
+<view class='start'>
+  <view class='start-tit'>驾校评分</view>
+  <view class='start-list'>驾校环境 
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    </view>
+  <view class='start-list'>服务态度 
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+    <image src='../../image/start.png'></image>
+  </view>
+</view>
+<view class='fabu'>发表</view>

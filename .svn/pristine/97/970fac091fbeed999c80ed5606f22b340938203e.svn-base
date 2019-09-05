@@ -1,0 +1,171 @@
+.top{
+  width: 100%;
+  height: 240rpx;
+  background-image: linear-gradient(#0096ff, #05ebce);
+  position: relative;
+}
+.con{
+  width: 700rpx;
+  position: absolute;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.3);
+  top:110rpx;
+  left: 50%;
+  margin-left: -350rpx;
+  box-sizing: border-box;
+  padding: 40rpx 30rpx;
+}
+.con-l image{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+  float: left;
+  margin-right: 30rpx;
+  margin-top: 20rpx;
+}
+.con-r{
+  float: left;
+}
+.con-r image{
+  width: 22rpx;
+  height: 22rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+.name{
+  font-size: 30rpx;
+  color: #2b2b2b;
+  font-weight: bold;
+}
+.pingfen{
+  color: #2b2b2b;
+  font-size: 24rpx;
+  margin:4rpx 0;
+}
+.xinxi{
+  font-size: 26rpx;
+  color: #434343;
+}
+.i{
+  display: inline-block;
+  height: 20rpx;
+  width:20rpx;
+  margin-right:20rpx;
+  border-right: 2rpx solid #a6a6a6;
+}
+.con-text{
+  width: 100%;
+  box-sizing: border-box;
+  padding: 50rpx 26rpx;
+  margin-top: 50rpx;
+}
+.con-text-tit{
+  display: block;
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2b2b2b;
+}
+.con-text-con{
+  font-size: 26rpx;
+  color: #2b2b2b;
+}
+.science{
+  background: #f4f4f4;
+  padding: 20rpx 0;
+}
+.science-box{
+  background: #fff;
+  padding: 50rpx 26rpx;
+}
+.science-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2b2b2b;
+  position: relative;
+}
+.science-img{
+  margin: 0 auto;
+  margin-top: 30rpx;
+}
+.science-img image{
+  width: 220rpx;
+  height: 164rpx;
+  margin-right: 18rpx;
+}
+.science-img image:last-of-type{
+  margin-right: 0;
+}
+.science-tit::after{
+  content: "";
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 0;
+  top:6rpx;
+  background: url(http://47.95.245.138:9011/banner/99fbd7b4981247c187c570ec02179bcb.png) no-repeat;
+  background-size: 100%;
+}
+.evaluate{
+  background: #f4f4f4;
+  padding-bottom: 20rpx;
+}
+.evaluate-box{
+  background: #fff;
+  padding: 50rpx 26rpx;
+}
+.evaluate-num{
+  margin: 20rpx 0;
+  color: #2b2b2b;
+}
+.evaluate-num text{
+  background: #f4f4f4;
+  font-size: 26rpx;
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  padding: 4rpx 20rpx;
+}
+.evaluate-list{
+  border-bottom: 1px  solid #e5e5e5;
+  padding: 40rpx 0; 
+  box-sizing: border-box;
+}
+.evaluate-list-img image{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  float: left;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+.evaluate-list-name{
+  color: #2b2b2b;
+  font-size: 28rpx;
+}
+.evaluate-list-con{
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+.huifu{
+  background: #f4f4f4;
+  margin-top: 30rpx;
+  padding: 20rpx;
+}
+.huifu-name{
+  color: #2b2b2b;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+.huifu-con{
+  font-size: 26rpx;
+  color: #676767;
+}
+.huifu-input{
+  margin-top: 20rpx;
+}
+.huifu-input input{
+  background: #fff;
+  border: 1px solid #2b2b2b;
+  padding-left: 20rpx;
+  font-size: 26rpx;
+}

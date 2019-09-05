@@ -1,0 +1,8 @@
+<view class='top'>
+  <image src="{{'http://admin.jxiao.chaojibuyers.com' + con.thumb}}"></image>
+</view>
+<view class='cont'>
+    <view class='tit'>{{con.title}}</view>
+    <view class='time'>{{con.publish_time}}</view>
+    <view class='con'>{{con.content}}</view>
+</view>

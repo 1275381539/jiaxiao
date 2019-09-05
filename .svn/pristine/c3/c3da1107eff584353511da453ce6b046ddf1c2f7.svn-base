@@ -1,0 +1,13 @@
+<!-- 授权页面 -->
+<view wx:if="{{isHide}}">
+  <swiper circular="true" indicator-dots="true" indicator-active-color="#ffc704" indicator-color="#efefef"	> 
+    <block>
+      <swiper-item wx:for="{{list}}" wx:key="index">
+         <image src="{{item[2]}}"/>
+         <view class='tit'>{{item[0]}}</view>
+         <text class='con'>{{item[1]}}</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"><image src='../../image/weixin.png'></image>手机号快捷登录</button>
+</view>

@@ -1,0 +1,14 @@
+.qrcode{
+  width: 430rpx;
+  height: 430rpx;
+  position: fixed;
+  top: 50%;
+  margin-top: -215rpx;
+  left: 50%;
+  margin-left: -215rpx;
+}
+.qrcode image{
+  width: 430rpx;
+  height: 430rpx;
+  display: block;
+}

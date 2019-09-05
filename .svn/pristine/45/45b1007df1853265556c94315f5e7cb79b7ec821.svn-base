@@ -1,0 +1,115 @@
+page{
+  background: #fafafa;
+}
+.box{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+  border-radius: 20rpx;
+  background: #fff;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.3);
+  box-sizing: border-box;
+  padding: 50rpx 30rpx;
+}
+.tit{
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #333;
+  padding-left: 60rpx;
+}
+.tit radio{
+  transform: scale(0.8)
+}
+.con{
+  margin-top: 30rpx;
+  font-size: 30rpx;
+}
+.con text{
+  display: inline-block;
+}
+.btn{
+  float: right;
+}
+.btn view{
+  width: 50rpx;
+  height: 50rpx;
+  border: 1px solid #d5d5d5;
+  text-align: center;
+  line-height: 50rpx;
+  font-size: 26rpx;
+  float: left;
+  margin-left: 10rpx;
+}
+.jieshao{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 50rpx;
+}
+.jieshao-tit{
+  color: #333;
+  font-size: 28rpx;
+  font-weight: 600;
+  margin-bottom: 20rpx;
+}
+.jieshao-con{
+  font-size: 24rpx;
+  margin: 10rpx;
+  color: #5d5d5d;
+}
+.pay{
+  width: 100%;
+  height: 150rpx;
+  position: fixed;
+  box-sizing: border-box;
+  bottom: 0;
+  background-image: linear-gradient(to right , #ffd75e, #ffd34e);
+  padding:0 60rpx;
+  color: #fff;
+  overflow: hidden;
+}
+.pay view{
+  float: left;
+  line-height: 150rpx;
+  color: #333;
+}
+.pay view.pay-btn{
+  width: 214rpx;
+  height: 64rpx;
+  line-height: 64rpx;
+  float: right;
+  background-image: linear-gradient(to right , #ff643a, #ff4e63);
+  margin-top: 40rpx;
+  text-align: center;
+  border-radius: 50rpx;
+  color: #fff;
+}
+radio-group{
+  display: inline-block
+}
+.er,.san{
+  width: 40rpx;
+  height: 40rpx;
+  display:block;
+  float: left;
+  border: 1px solid #ccc;
+  border-radius: 50%;
+  margin-right: 20rpx;
+}
+.active{
+  background: url(http://img.chaojibuyers.com:9011/jiaxiao/xuanze.png) no-repeat;
+  background-size: 100%;
+}
+.agreement{
+  width: 700rpx;
+  margin: 30rpx auto;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+.agreement radio{
+  transform:scale(0.6);
+  vertical-align: middle;
+}
+.agreement navigator{
+  display: inline-block;
+  color: red;
+}

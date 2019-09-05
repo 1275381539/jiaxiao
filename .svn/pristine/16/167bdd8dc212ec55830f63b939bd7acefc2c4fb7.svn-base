@@ -1,0 +1,61 @@
+const app = getApp()
+Page({
+  data: {
+    school:'',  // 驾校信息
+    list:[], // 科目详情
+    teacher:[], //教练列表
+    tab:0,
+    kemu:true,
+    flag:0
+  },
+  //科目tab切换
+  navTab: function (e) {
+    var that = this;
+    if (e.currentTarget.dataset.id == 0){
+      that.setData({
+        kemu: true
+      })
+    }else{
+      that.setData({
+        kemu: false
+      })
+    }
+    that.setData({
+      tab: e.currentTarget.dataset.id
+    })
+  },
+  // 拨打电话
+  tel: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.school.school_phone,
+    })
+  },
+  onLoad: function (ops) {
+    var that = this;
+    let uid = wx.getStorageSync('uid');
+    // 获取驾校信息
+    wx.request({
+      url: app.globalData.url +'/wx/index/view.html',
+      data:{
+        uid:uid,
+        id:ops.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success:function(res){
+        var ret = res.data.data
+        that.setData({
+          school: ret.School,
+          list: ret.list,
+          teacher: ret.teacher,
+          flag: ret.user.record_flg
+        })
+      }
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

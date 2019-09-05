@@ -1,0 +1,93 @@
+<!-- 轮播 --> 
+<navigator class='top' hover-class='none' url='../science/science?id={{school.id}}'>
+  <image src="{{'http://admin.jxiao.chaojibuyers.com' + school.school_face}}"></image>
+</navigator>
+<!-- 驾校详情 -->
+<view class='infor'>
+  <text class='tit'>{{school.school_name}}</text>
+  <view class='biaoqian'>
+    <text  wx:for="{{school.tag}}" wx:key="index">{{item}}</text>
+  </view>
+  <navigator hover-class='none' url='../map/map?id={{school.id}}'>
+    <text>{{school.school_location}}</text>
+    <text style='float:right'>{{school.distance/1000}}km</text>
+  </navigator>
+  <navigator hover-class='none' url='../evaluate/evaluate'>
+    <text>评分{{school.star}}分</text>
+    <text>很优秀</text>
+    <text  style='float:right'>{{dl+gl+zl}}条评价</text>
+  </navigator>
+  <navigator hover-class='none' url='../ranking/ranking'>
+    <text>综合排行第{{school.orders}}名</text>
+    <text  style='float:right'>查看排行榜</text>
+  </navigator>
+</view>
+<!-- 科目和教练选项 -->
+<view class='nav'>
+  <view class="{{tab==0?'active':''}}" bindtap='navTab' data-id="0">项目明细</view>
+  <view class="{{tab==1?'active':''}}" bindtap='navTab' data-id="1">教练</view>
+</view>
+<!-- 科目 -->
+<view class='nav-list' wx:if="{{kemu}}">
+  <view class='nav-list-top'  wx:if="{{flag == 0}}">
+    <view class='nav-list-top-l'>
+      <view><text>建档费</text><text>￥300</text></view>
+    </view>
+    <navigator class='nav-pay' hover-class='none' url='../process/process?id={{school.id}}'>在线缴费</navigator>
+  </view>
+
+  <view wx:else>
+      <view class='nav-list-top' wx:for="{{list}}" wx:key="index" >
+        <view class='nav-list-top-l'>
+          <view><text>{{list[index].subject_name}}</text><text>￥{{list[index].price}}</text></view>
+          <view style='font-sizer:26rpx;color:424242;font-weight:normal;margin-top:20rpx'>共计{{list[index].hours}}学时</view>
+        </view>
+        <navigator class='nav-pay' hover-class='none' url='../pay-list/pay-list?id={{school.id}}&lid={{list[index].id}}&type={{list[index].subject_type}}'>在线缴费</navigator>
+      </view>
+  </view>
+</view>
+<!-- 教练 -->
+<view class='nav-list' wx:else>
+  <navigator class='j-list' hover-class='none'  wx:for="{{teacher}}" wx:key="index" url='../jiaolian/jiaolian?id={{teacher[index].id}}'>
+    <view class='j-img'><image src='{{teacher[index].teacher_img}}'></image></view>
+    <view class='j-xinxi'>
+      <view class='j-name'><text>{{teacher[index].teacher_name}}</text></view>
+      <view class='j-pingfen'>
+        <image src='../../image/pingfen.png'></image>
+        <text>{{teacher[index].fen}}分</text>
+      </view>
+      <view class='j-jieshao'><text>教龄10年</text></view>
+    </view>
+    <view class='nav-pay'>立即了解</view>
+  </navigator>
+</view>
+<!-- 驾校简介 -->
+<view class='brief'>
+  <navigator class='brief-con' hover-class='none' url='../brief/brief?id={{school.id}}'>
+    <view class='brief-tit'>驾校简介</view>
+    <view class='brief-text'>核准机构：{{school.school_check_organization}}</view>
+    <view class='brief-text'>注册时间：{{school.school_regist_time}}</view>
+    <view class='brief-text yan'>工商注册号：{{school.school_regist_code}}</view>
+  </navigator>
+</view>
+<view class='btn'>
+  <button hover-class="btn-hover" bindtap='tel'>预约看驾校</button>
+  <button hover-class="btn-hover" open-type="contact">在线咨询</button>
+</view>
+<!-- 驾校评价 -->
+ <view class='evaluate'>
+  <view class='evaluate-box'>
+    <view class='science-tit'>学员评价</view>
+    <view class='evaluate-num'><text>好评({{gl}})</text><text>中评({{zl}})</text><text>差评({{dl}})</text></view>
+    <view class='evaluate-list' wx:for="{{good}}" wx:key="index">
+      <view class='evaluate-list-top'>
+        <view class='evaluate-list-img'><image src="{{good[index].user.headimgurl}}"></image></view>
+        <view class='evaluate-list-name'>
+          <view>{{good[index].user.nickname}}</view>
+          <view style='font-size:24rpx;color:#666666'>{{good[index].create_time}}</view>
+        </view>
+      </view>
+      <view class='evaluate-list-con'>{{good[index].feedback}}</view>
+    </view>
+  </view>
+ </view>

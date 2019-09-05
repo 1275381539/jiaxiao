@@ -1,0 +1,3 @@
+<view class='concent'>
+  <rich-text nodes="{{con}}"></rich-text>
+</view>

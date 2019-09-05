@@ -1,0 +1,50 @@
+<page>
+  <view class='mine-nav'>
+    <view class="mine-tab {{tab==0?'active':''}}" bindtap='navTab' data-id="0">全部</view>
+    <view class="mine-tab {{tab==1?'active':''}}" bindtap='navTab' data-id="1">待付款</view>
+    <view class="mine-tab {{tab==2?'active':''}}" bindtap='navTab' data-id="2">已完成</view>
+    <view class="mine-tab {{tab==3?'active':''}}" bindtap='navTab' data-id="3">待评价</view>
+  </view>
+
+  <view class='list'>
+    <view class='list-top'>
+      <view class='list-top-l'>
+        <image src='../../image/me-header.png'></image><text>运通驾校</text>
+      </view>
+      <view class='list-top-r'>代付款</view>
+    </view>
+
+    <view class='con'>
+      <text class='con-l'>建档费</text>
+      <text class='con-r'>￥300.00</text>
+    </view>
+
+    <view class='time'>下单时间：2019-05-28 15:03</view>
+
+    <view class='btn'>
+      <view class='cancel'>取消</view>
+      <view class='pay'>支付</view>
+    </view>
+  </view>
+
+  <view class='list'>
+    <view class='list-top'>
+      <view class='list-top-l'>
+        <image src='../../image/me-header.png'></image><text>运通驾校</text>
+      </view>
+      <view class='list-top-r'>代付款</view>
+    </view>
+
+    <view class='con'>
+      <text class='con-l'>科二学时</text>
+      <text class='con-r'>￥1600.00</text>
+    </view>
+
+    <view class='time'>下单时间：2019-05-28 15:03</view>
+
+    <view class='btn'>
+      <view class='cancel'>取消</view>
+      <view class='pay'>支付</view>
+    </view>
+  </view>
+</page>

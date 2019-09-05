@@ -1,0 +1,23 @@
+<view class='top'>
+  <view class='header'>
+    <image src='../../image/me-header.png'></image>
+    <view class='name'>{{user.phone}}</view>
+    <text class='jx-name' wx:if="{{school != null}}">{{school.school_name}}</text>
+    <navigator class='speed' hover-class='none' url='/pages/learning/learning?uid={{user.id}}&id={{school.id}}'>
+      <view class="{{1<model?'completed':''}} {{1==model?'loading':''}}">科一{{model}}</view>
+      <view class="{{2<model?'completed':''}} {{2==model?'loading':''}}" >科二</view>
+      <view class="{{3<model?'completed':''}} {{3==model?'loading':''}}" >科三</view>
+      <view class="{{4<model?'completed':''}} {{4==model?'loading':''}}"  >安全文明驾驶</view>
+    </navigator>
+  </view>
+</view>
+<navigator hover-class='none' class='tese'  wx:if='{{jzt}}' url='/pages/tese/tese?id={{school.id}}'>
+  <image src='http://img.chaojibuyers.com:9011/jiaxiao/tese.png'></image>
+</navigator>
+<view class="list {{jzt?'':'act'}}">
+  <navigator hover-class='none' url='../order/order'>我的订单</navigator>
+  <navigator hover-class='none' url='/pages/jiaxiaoruzhu/jiaxiaoruzhu?id={{user.id}}'>驾校入驻</navigator>
+  <navigator hover-class='none'><button  open-type="contact">客服中心</button></navigator>
+  <navigator hover-class='none' url='/pages/complaint/complaint?id={{user.id}}'>信箱投诉</navigator>
+  <navigator hover-class='none'><button  open-type="contact">申请退款</button></navigator>
+</view>

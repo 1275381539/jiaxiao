@@ -1,0 +1,100 @@
+.top{
+  width: 100%;
+  height: 300rpx;
+  /* background: url(http://47.95.245.138:9011/banner/49fd2673b87e42ed9d5bf158a9c7985d.png) no-repeat;
+  background-size: 100%; */
+  background-image: linear-gradient( #ffd34e 60%, #fff);
+  position: relative;
+}
+.header{
+  width: 700rpx;
+  height: 280rpx;
+  position: absolute;
+  top: 90rpx;
+  left: 25rpx;
+  background: #fff;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.3);
+  text-align: center;
+  padding: 30rpx 0;
+  box-sizing: border-box;
+}
+.header image{
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 50%;
+}
+.name{
+  color: #464646;
+  font-size: 28rpx;
+  margin: 10rpx 0;
+}
+.jx-name{
+  font-size: 26rpx;
+  color: #686868;
+  border: 1px solid #686868;
+  border-radius: 30rpx;
+  padding: 2rpx 14rpx;
+}
+.list{
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 100rpx;
+  color: #333;
+  font-size: 30rpx;
+  padding-left: 40rpx;
+}
+.list navigator{
+ height: 120rpx;
+ border-bottom: 1px solid #ebebeb;
+ line-height: 120rpx;
+ position: relative;
+}
+.list navigator:nth-of-type(1)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://47.95.245.138:9011/banner/c355d9c666ec4397815a910c7b0d400b.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list navigator:nth-of-type(3)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://47.95.245.138:9011/banner/e91785e010484c349c1c3e116c9390b4.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list navigator:nth-of-type(4)::before{
+  content: "";
+  width: 42rpx;
+  height: 42rpx;
+  background: url(http://47.95.245.138:9011/banner/ffa7ae1dca424ab0b7eccd7bf10669e9.png);
+  background-size: 100%;
+  position: absolute;
+  left:-50rpx;
+  top:42rpx;
+  display: block
+}
+.list button{
+  border-radius:0;
+  background:none;
+  text-align: left;
+  padding: 0;
+  height: 120rpx;
+  border-bottom: 1px solid #ebebeb;
+  color: #333;
+  font-size: 30rpx;
+  line-height: 120rpx;
+  position: relative;
+}
+button::after{
+border:none;
+}

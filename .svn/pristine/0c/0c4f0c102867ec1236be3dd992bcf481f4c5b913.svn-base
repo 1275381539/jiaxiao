@@ -1,0 +1,85 @@
+page{
+  background: #efefef;
+}
+.box{
+  background: #fff;
+  width: 700rpx;
+  margin: 30rpx auto;
+  border-radius: 20rpx;
+  padding: 50rpx 20rpx;
+  box-sizing: border-box;
+}
+.tit{
+  width: 100%;
+  line-height: 60rpx;
+  height: 60rpx;
+}
+.tit view{
+  width: 50%;
+  display: inline-block;
+  text-align: center;
+  color: #333;
+  font-size: 36rpx;
+  font-weight: bold;
+  position: relative;
+}
+.active::after{
+  content: "";
+  width: 40rpx;
+  height: 4rpx;
+  background: #494949;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -20rpx;
+}
+.active::before{
+  content: "";
+  width: 100rpx;
+  height: 2rpx;
+  background: #aaa;
+  position: absolute;
+  bottom: -2rpx;
+  left: 50%;
+  margin-left: -50rpx;
+}
+.con{
+  font-size: 30rpx;
+  margin: 40rpx 0;
+  overflow: hidden;
+}
+.con text{
+  float: left;
+  height: 50rpx;
+  line-height: 50rpx;
+  width: 20%;
+  position: relative;
+}
+.con input,.con picker,.con textarea{
+  width: 70%;
+  display: inline-block;
+  border: 1px solid #999;
+  border-radius: 10rpx;
+  overflow:	visible; 
+  padding-left: 30rpx;
+}
+
+.btn{
+  width: 210rpx;
+  height: 60rpx;
+  margin: 0 auto;
+  border: 1px solid #2b2b2b;
+  text-align: center;
+  color: #333;
+  border-radius: 30rpx;
+  font-size: 28rpx;
+  line-height: 60rpx;
+  margin-top: 20rpx;
+}
+.tishi{
+  text-align: center;
+  font-size: 24rpx;
+  color: #666;
+  display: block;
+  margin-top: 20rpx;
+}

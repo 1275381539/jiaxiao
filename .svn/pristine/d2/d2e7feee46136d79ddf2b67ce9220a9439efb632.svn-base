@@ -1,0 +1,145 @@
+var app = getApp()
+Page({
+  data: {
+    jiazhao:'',
+    img1:"http://img.chaojibuyers.com:9011/jiaxiao/tianjia1.png",
+    img2:"http://img.chaojibuyers.com:9011/jiaxiao/tianjia2.png",
+    id:'' // 驾校id
+  },
+  //上传图片
+  chooseImage: function (e) {
+    var that = this;
+    let uid = wx.getStorageSync('uid')
+    wx.chooseImage({
+      count: 1, // 默认9
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths;
+        if (e.currentTarget.dataset.id == 1){
+          that.setData({
+            img1:tempFilePaths[0]
+          })
+        }else{
+          that.setData({
+            img2:tempFilePaths[0]
+          })
+        }
+        wx.uploadFile({
+          url: app.globalData.url + '/wx/index/wxupload.html', //接口
+          filePath: tempFilePaths[0],
+          name: 'file',
+          success: function (res) {
+            let img_path = JSON.parse(res.data).img_path;
+            let img = that.data.imgs_url;
+            img = img_path;
+            that.setData({
+              imgs_url: img
+            })
+            //行驶证文字识别
+            wx.request({
+              url: app.globalData.url + '/wx/index/idcard.html',
+              method: 'POST',
+              data: { 
+                img: 'https://jxiao.chaojibuyers.com'+img,
+                type: e.currentTarget.dataset.id,
+                uid:uid
+               },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              success: function (res) {
+                wx.hideLoading();
+                if (!res.data.success) {
+                  wx.showToast({
+                    title: '身份证读取错误',
+                    icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
+                    duration: 2000
+                  })
+                
+                }
+              }
+            });
+          }
+        })
+      }
+    })
+  },
+  // 支付
+  getPhoneNumber:function(e){
+    var  that = this
+    let uid = wx.getStorageSync('uid');
+    wx.login({
+      success: res => {
+        console.log(res)
+        wx.request({
+          url: app.globalData.url + '/wx/index/phone.html',
+          method: 'POST',
+          data: {
+            uid: uid,
+            encryptedData: e.detail.encryptedData,
+            iv: e.detail.iv,
+            js_code: res.code
+          },
+          header: {
+            'content-type': 'application/x-www-form-urlencoded'
+          },
+          success: function (res) {
+            if (res.data.success){
+              // if (res.data.data.phone != "" && res.data.data.idcard != "" && res.data.data.invalid != ""){
+                wx.request({
+                  url: app.globalData.url + '/wx/index/pay.html',
+                  method: 'POST',
+                  data: {
+                    school_id: that.data.id,
+                    uid:uid
+                  },
+                  header: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                  },
+                  success:function(res){
+                    var ret = res.data.data
+                    wx.requestPayment({
+                      timeStamp: ret.timeStamp,
+                      nonceStr: ret.nonceStr,
+                      package: ret.package,
+                      signType: 'MD5',
+                      paySign: ret.paySign,
+                      success(res) {
+                        wx.showToast({
+                          title: '支付成功',
+                        })
+                      },
+                      fail(res) {
+                        wx.showToast({
+                          icon: "loading",
+                          title: '支付失败',
+                        })
+                        that.onShow();
+                      }
+                    })
+                  }
+                })
+              // }else{
+              //   wx.showToast({
+              //     icon:'none',
+              //     title:"请上传正确的证件"
+              //   })
+              // }
+            }
+          }
+        })
+      }
+    })
+  },
+  onLoad: function (ops) {
+    var that = this
+    let jiazhao = wx.getStorageSync('jiazhao')
+    that.setData({
+      jiazhao: jiazhao,
+      id: ops.id
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

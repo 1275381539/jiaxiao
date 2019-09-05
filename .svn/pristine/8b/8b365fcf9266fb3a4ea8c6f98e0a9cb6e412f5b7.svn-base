@@ -1,0 +1,98 @@
+var app = getApp()
+Page({
+  data: {
+    jiazhao:''
+  },
+  // chooseImage: function () {
+  //   let _this = this;
+  //   wx.chooseImage({
+  //     sizeType: ['compressed'], // original 原图，compressed 压缩图，默认二者都有
+  //     sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+  //     success: function (res) {
+  //        // var tempFilePaths = res.tempFilePaths;
+  //       wx.showToast({
+  //         title: '正在上传...',
+  //         icon: 'loading',
+  //         mask: true,
+  //         duration:1000
+  //       }) 
+  //       wx.uploadFile({
+  //         url: app.globalData.url + '/wx/index/idcard.html',
+  //         filePath: res.tempFilePaths[0],
+  //         name: 'file',
+  //         success: res=> {
+  //           console.log(res)
+  //         }
+  //       })
+  //     }
+  //   })
+  // },
+
+  //上传图片
+  chooseImage: function () {
+    var that = this;
+    wx.chooseImage({
+      count: 1, // 默认9
+      success: function (res) {
+        // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+        var tempFilePaths = res.tempFilePaths;
+        wx.uploadFile({
+          url: app.globalData.url + '/wx/index/wxupload.html', //接口
+          filePath: tempFilePaths[0],
+          name: 'file',
+         
+          success: function (res) {
+            console.log(res);
+            let img_path = JSON.parse(res.data).img_path;
+            let img = that.data.imgs_url;
+            img = img_path;
+            that.setData({
+              imgs_url: img
+            })
+            //行驶证文字识别
+            wx.request({
+              url: app.globalData.url + '/wx/index/idcard.html',
+              method: 'POST',
+              data: { img: 'http://jxiao.chaojibuyers.com/'+img },
+              header: {
+                'content-type': 'application/x-www-form-urlencoded'
+              },
+              success: function (res) {
+                wx.hideLoading();
+                if (!res.data.success) {
+                  wx.showToast({
+                    title: '身份证读取错误',
+                    icon: 'none',    //如果要纯文本，不要icon，将值设为'none'
+                    duration: 2000
+                  })
+                
+                } else {
+                  
+                }
+
+              }
+            });
+          }
+          
+        })
+      }
+    })
+  },
+
+  // 支付
+  pay:function(){
+    console.log(123)
+    var  that = this
+    let token = wx.getStorageSync('token')
+  },
+  onLoad: function (options) {
+    var that = this
+    let jiazhao = wx.getStorageSync('jiazhao')
+    that.setData({
+      jiazhao: jiazhao
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

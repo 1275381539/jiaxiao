@@ -1,0 +1,17 @@
+<view class='box'>
+  <view class='title'>驾校入驻申请表</view>
+  <view class='con'>
+    <text>驾校名称</text>
+    <input type='text' placeholder='请填写有效的驾校名称' bindinput="schoolName"></input>
+  </view>
+  <view class='con'>
+    <text>联系人</text>
+    <input type='text' placeholder='请填写有效的联系人姓名' bindinput="name"></input>
+  </view>
+  <view class='con'>
+    <text>联系电话</text>
+    <input type='number' placeholder='请填写有效的联系人电话' bindinput="tel"></input>
+  </view>
+  <view class='btn' bindtap='btn'>立即入驻</view>
+  <text class='tishi'>48小时内工作人员将会联系您安排贵校入驻</text>
+</view>

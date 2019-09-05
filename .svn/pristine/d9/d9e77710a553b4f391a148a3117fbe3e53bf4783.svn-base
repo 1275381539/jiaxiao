@@ -1,0 +1,159 @@
+page{
+  background: #fafafa;
+}
+.page{
+  width: 700rpx;
+  background: #fff;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.3);
+  border-radius:20rpx;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 0 40rpx;
+  margin-top: 50rpx;
+  padding-bottom: 50rpx;
+}
+.list{
+  height: 108rpx;
+  line-height: 108rpx;
+  border-bottom: 1px solid #c2c2c2;
+  color: #363636;
+  font-size: 28rpx;
+}
+.list:last-of-type{
+  border: none;
+}
+.list input{
+  display: inline-block;
+  vertical-align: middle;
+  padding-left:20rpx;
+  width: 400rpx;
+}
+.list radio-group{
+  display: inline-block;
+}
+.list radio{
+transform:scale(0.7);
+font-size: 36rpx;
+}
+.btn{
+  width: 260rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background: #ffc003;
+  color: #fff;
+  border-radius:50rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin: 50rpx auto;
+}
+.none{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  position:fixed;
+  top: 0;
+  left: 0;
+  text-align: center;
+  z-index: 99;
+  color: #fff;
+}
+.content{
+  width: 700rpx;
+  height: 500rpx;
+  margin: 0 auto;
+  margin-top: 300rpx;
+  padding: 20rpx 0;
+  background: #fff;
+  color: #333;
+  border-radius: 20rpx;
+}
+.anniu{
+  overflow: hidden;
+}
+.anniu view{
+  width: 30%;
+  float: left;
+  margin-top: 30rpx;
+  background-image: linear-gradient(to right , #07e8e0, #1eb1f4);
+  height: 72rpx;
+  line-height: 72rpx;
+  border-radius:50rpx;
+}
+.anniu .q{
+  margin-left: 15%;
+  margin-right: 10%;
+}
+.img::after{
+  border: none;
+}
+.upImg view{
+  color: #363636;
+  font-size: 28rpx;
+  height: 108rpx;
+  line-height: 108rpx;
+  padding: 0;
+}
+.img{
+  background: none;
+  width: 100%;
+  height: 322rpx;
+  padding: 0;
+  margin-bottom: 10rpx;
+}
+.img image{
+  width: 600rpx;
+  height: 322rpx;
+}/* pages/process-pay/process-pay.wxss */
+.news{
+  font-size: 28rpx;
+  padding: 14rpx;
+  color: #666;
+}
+.news view{
+  margin: 10rpx 0;
+  display: flex;
+}
+.news view text:last-child{
+  background: #f3f3f3;
+  padding: 0 20rpx;
+  width:70%;
+  display: inline-block;
+  box-sizing: border-box;
+  line-height: 30rpx;
+}
+.news view text:first-child{
+  width: 30%;
+  text-align: left;
+  position: relative;
+  padding-left:20rpx;
+  box-sizing: border-box;
+  line-height: 30rpx;
+}
+.news view text:first-child::after{
+  content: '';
+  width: 2px;
+  height: 30rpx;
+  background: #ffd34e;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.img3 image{
+  width: 236rpx;
+  height: 300rpx;
+}
+.agreement{
+  width: 700rpx;
+  margin: 30rpx auto;
+  font-size: 28rpx;
+  line-height: 30rpx;
+}
+.agreement radio{
+  transform:scale(0.6);
+  vertical-align: middle;
+}
+.agreement navigator{
+  display: inline-block;
+  color: red;
+}

@@ -1,0 +1,184 @@
+var app = getApp()
+Page({
+  data: {
+    er:1,
+    san:1,
+    ner:0,
+    nsan:0,
+    price:100,
+    kemu:1,
+    hour:1,
+    school_id:'',
+    subject_id:''
+  },
+  // 科二选择学时
+  remove2:function(){
+    var that = this;
+    if (that.data.ner == 16){
+      wx.showToast({
+        title: "您当前不能选择课时",
+        icon: "none"
+      })
+    }else{
+      if (that.data.er == 1) {
+        wx.showToast({
+          title: "一次购买不能小于1课时",
+          icon: "none"
+        })
+      } else {
+        var n = that.data.er;
+        n = n - 1;
+        that.setData({
+          er: n,
+          price:n*100
+        })
+      }
+    }
+  },
+  add2:function(){
+    var that = this;
+    if (that.data.ner == 16) {
+      wx.showToast({
+        title: "您当前不能选择课时",
+        icon: "none"
+      })
+    }else{
+      var n = that.data.er;
+      n = n + 1;
+      that.setData({
+        er: n,
+        price: n * 100
+      })
+    }
+  },
+  // 科三选择学时
+  remove3: function () {
+    var that = this;
+    if (that.data.nsan == 24) {
+      wx.showToast({
+        title: "您当前不能选择课时",
+        icon: "none"
+      })
+    }else{
+      if (that.data.san == 1) {
+        wx.showToast({
+          title: "一次购买不能小于1课时",
+          icon: "none"
+        })
+      } else {
+        var n = that.data.san;
+        n = n - 1;
+        that.setData({
+          san: n
+        })
+      }
+    }
+  },
+  add3: function () {
+    var that = this;
+    if (that.data.nsan == 24) {
+      wx.showToast({
+        title: "您当前不能选择课时",
+        icon: "none"
+      })
+    } else {
+      var n = that.data.san;
+      n = n + 1;
+      that.setData({
+        san: n
+      })
+    }
+  },
+  onLoad: function (ops) {
+    var that = this;
+    let uid = wx.getStorageSync('uid')
+    that.setData({
+      school_id:ops.id,
+      subject_id:ops.lid,
+    })
+    wx.request({ //获取之前有没有购买过学时
+      url: app.globalData.url + '/wx/index/query-order.html',
+      method: 'POST',
+      data: {
+        uid: uid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        var ret = res.data.data
+        if (!ret) { // 未购买过课时了
+          if (ops.type == 1) { //科目二
+            that.setData({
+              kemu: 1, // 显示科目
+              er: 16,  // 学时数量
+              ner: 16, // 判断能否点击 
+              price: 16 * 100  // 价钱
+            })
+          } else if (ops.type == 3) { // 科目三
+            that.setData({
+              kemu: 3,// 显示科目
+              san: 24,// 学时数量
+              nsan: 24,// 判断能否点击
+              price: 24 * 100  // 价钱 
+            })
+          }
+        }else{
+          if (ops.type == 1) { //科目二
+            that.setData({
+              kemu: 1, // 显示科目
+            })
+          } else if (ops.type == 3) { // 科目三
+            that.setData({
+              kemu: 3,// 显示科目
+            })
+          }
+        }
+      }
+    })
+  },
+  // 支付
+  pay:function(){
+    var that = this;
+    let uid = wx.getStorageSync('uid')
+    wx.request({
+      url: app.globalData.url + '/wx/index/keshi-pay.html',
+      method: 'POST',
+      data: {
+        uid: uid,
+        school_id:that.data.school_id,
+        subject_id: that.data.subject_id,
+        price: that.data.price,
+        class_hour: that.data.hour,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success:res=>{
+        var ret = res.data.data
+        wx.requestPayment({
+          timeStamp: ret.timeStamp,
+          nonceStr: ret.nonceStr,
+          package: ret.package,
+          signType: 'MD5',
+          paySign: ret.paySign,
+          success(res) {
+            wx.showToast({
+              title: '支付成功',
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              icon: "loading",
+              title: '支付失败',
+            })
+            that.onShow();
+          }
+        })
+      }
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

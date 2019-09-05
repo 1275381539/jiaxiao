@@ -1,0 +1,99 @@
+const app = getApp()
+Page({
+  data: {
+    list:'',
+    school_id:'', // 驾校id
+    flag:''
+  },
+  onLoad: function (ops) {
+    console.log(ops)
+    var id = ops.id
+    let uid = wx.getStorageSync('uid')
+    var that = this
+    that.setData({
+      school_id:ops.id,
+      flag:ops.flag
+    })
+    wx.request({ // 获取所有信息
+      url: app.globalData.url + '/wx/index/character.html',
+      data: {
+        id:id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        var ret = res.data.data;
+        that.setData({
+          list:ret
+        })
+      }
+    })
+  },
+  // 支付
+  pay:function(e){
+    var that = this;
+    if (that.data.flag == 0){
+      wx.showToast({
+        icon: 'none',
+        title: '请先缴纳建档费',
+      })
+    }else{
+      let uid = wx.getStorageSync('uid')
+      wx.request({
+        url: app.globalData.url + '/wx/index/keshi-pay.html',
+        method: 'POST',
+        data: {
+          uid: uid,
+          school_id: that.data.school_id,
+          subject_id: e.currentTarget.dataset.id,
+          price: e.currentTarget.dataset.price,
+          class_hour: e.currentTarget.dataset.hour,
+        },
+        header: {
+          'content-type': 'application/x-www-form-urlencoded'
+        },
+        success: res => {
+          var ret = res.data.data
+          wx.requestPayment({
+            timeStamp: ret.timeStamp,
+            nonceStr: ret.nonceStr,
+            package: ret.package,
+            signType: 'MD5',
+            paySign: ret.paySign,
+            success(res) {
+              wx.showModal({
+                title: '提示',
+                content: "支付成功",
+                showCancel: false,//是否显示取消按钮
+                confirmText: "确定",//默认是“确定”
+                confirmColor: '#000',//确定文字的颜色
+                success: function (res) {
+                  if (res.cancel) {
+                    //点击取消,默认隐藏弹框
+                  } else {
+                    //点击确定
+                    wx.redirectTo({
+                      url: '/pages/details/details?id=' + that.data.school_id,
+                    })
+                  }
+                }
+              })
+            },
+            fail(res) {
+              wx.showToast({
+                icon: "loading",
+                title: '支付失败',
+              })
+              that.onShow();
+            }
+          })
+        }
+      })
+    }
+  },
+  onShareAppMessage: function () {
+
+  }
+})

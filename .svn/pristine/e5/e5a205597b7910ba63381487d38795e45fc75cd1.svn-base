@@ -1,0 +1,3 @@
+<view class='science-img'>
+  <image src="{{'http://admin.jxiao.chaojibuyers.com' + item}}" wx:for="{{imgurl}}" wx:key="index" bindtap='img' data-list="{{'http://admin.jxiao.chaojibuyers.com' + imgurl}}" data-src="{{item}}"></image>
+</view>

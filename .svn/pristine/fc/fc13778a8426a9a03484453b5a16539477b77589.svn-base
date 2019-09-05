@@ -1,0 +1,49 @@
+var app = getApp();
+Page({
+  data: {
+    schoolName:'', // 驾校名称
+    name: '', // 名称
+    tel: '', // 联系电话
+  },
+  //获取驾校名称
+  schoolName:function(e){
+    this.setData({
+      schoolName: e.detail.value
+    })
+  },
+  //获取名称
+  name: function (e) {
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  //获取电话
+  tel: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+  // 提交申请
+  btn:function(){
+    var that = this;
+    wx.request({
+      url: app.globalData.url + '/wx/index/temporary.html',
+      data: {
+        school_name:that.data.schoolName,
+        contacts: that.data.name,
+        phone: that.data.tel
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: res => {
+        console.log(res)
+      }
+    })
+
+  },
+  onLoad: function (options) {
+
+  },
+})

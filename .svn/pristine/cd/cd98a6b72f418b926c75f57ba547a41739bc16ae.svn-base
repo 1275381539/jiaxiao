@@ -1,0 +1,58 @@
+<view class='evaluate'>
+  <view class='evaluate-box'>
+    <view class='science-tit'>学员评价</view>
+    <view class='evaluate-num'><text>好评(99)</text><text>中评(4)</text><text>差评(0)</text></view>
+
+    <view class='evaluate-list'>
+      <view class='evaluate-list-top'>
+        <view class='evaluate-list-img'><image src='../../image/me-header.png'></image></view>
+        <view class='evaluate-list-name'>
+          <view>学员姓名</view>
+          <view style='font-size:24rpx;color:#666666'>2019-06-30</view>
+        </view>
+      </view>
+      <view class='evaluate-list-con'>
+        驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好
+      </view>
+      <view class='huifu'>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view class='huifu-input'>
+          <input value='' type='text' placeholder='评论' confirm-type='done'></input>
+        </view>
+      </view>
+    </view>
+
+    <view class='evaluate-list'>
+      <view class='evaluate-list-top'>
+        <view class='evaluate-list-img'><image src='../../image/me-header.png'></image></view>
+        <view class='evaluate-list-name'>
+          <view>学员姓名</view>
+          <view style='font-size:24rpx;color:#666666'>2019-06-30</view>
+        </view>
+      </view>
+      <view class='evaluate-list-con'>
+        驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好驾校很好
+      </view>
+            <view class='huifu'>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view>
+            <text class='huifu-name'>教练：</text>
+            <text class='huifu-con'>谢谢学员的认可谢谢学员的认可谢谢学员的认可谢谢学员的认可</text>
+        </view>
+        <view class='huifu-input'>
+          <input value='' type='text' placeholder='评论' confirm-type='done'></input>
+        </view>
+      </view>
+    </view>
+  </view>
+ </view>

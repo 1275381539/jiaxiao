@@ -1,0 +1,69 @@
+page{
+  width: 750rpx;
+  margin: 0 auto;
+  text-align: center;
+}
+.tit{
+  color: #ffab00;
+  font-size: 50rpx;
+  font-weight: bold;
+  margin-top: 160rpx;
+  letter-spacing:6rpx;
+}
+.con{
+  color: #fec806;
+  font-size: 32rpx;
+  margin-top: 20rpx;
+  position: relative;
+}
+.con::before{
+  content: "";
+  position: absolute;
+  background: #fec804;
+  width: 80rpx;
+  height: 4rpx;
+  top: 20rpx;
+  left: -90rpx;
+}
+.con::after{
+  content: "";
+  position: absolute;
+  background: #fec804;
+  width: 80rpx;
+  height: 4rpx;
+  top: 20rpx;
+  right: -90rpx;
+}
+swiper{
+  width: 750rpx;
+  height: 900rpx;
+  text-align: center;
+  margin-top:150rpx; 
+}
+swiper image{
+  width: 660rpx;
+  height: 490rpx;
+}
+button::after{
+  border: none;
+}
+button{
+  width: 100%;
+  height:120rpx;
+  line-height: 120rpx;
+  position: fixed;
+  bottom: 0;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+  background: #ffe713;
+  border-radius: 0;
+  border-top-left-radius: 30rpx;
+  border-top-right-radius: 30rpx;
+}
+button image{
+  width: 56rpx;
+  height: 56rpx;
+  vertical-align: middle;
+  margin-right: 20rpx;
+}

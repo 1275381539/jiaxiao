@@ -1,0 +1,140 @@
+const app = getApp()
+Page({
+  data: {
+    school:'',  // 驾校信息
+    subject_list:[], // 科目详情
+    tab:0,
+    kemu:true
+  },
+  //科目tab切换
+  navTab: function (e) {
+    var that = this;
+    if (e.currentTarget.dataset.id == 0){
+      that.setData({
+        kemu: true
+      })
+    }else{
+      that.setData({
+        kemu: false
+      })
+    }
+    that.setData({
+      tab: e.currentTarget.dataset.id
+    })
+  },
+  // 拨打电话
+  tel: function () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.school.school_phone,
+    })
+  },
+  onLoad: function (ops) {
+    var that = this;
+    let member_id = wx.getStorageSync('token');
+    // 获取驾校信息
+    wx.request({
+      url: app.globalData.url +'/api/school/info',
+      data:{
+        id:ops.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success:function(res){
+        var ret = res.data.data
+        console.log(2,ret)
+        if(ret.flag == 1){
+          that.setData({
+            school: ret
+          })
+        }
+      }
+    })
+    // 驾校科目详情
+    wx.request({
+      url: app.globalData.url + '/api/school/subject',
+      data: {
+        school_id: ops.id,
+        member_id: member_id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        var ret = res.data
+        if (ret.flag == 1) {
+          that.setData({
+            subject_list: ret.data.subject_list
+          })
+        }
+      }
+    })
+    // 教练列表
+    wx.request({
+      url: app.globalData.url + '/api/school/teacher',
+      data: {
+        school_id: ops.id,
+        member_id: member_id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        var ret = res.data
+        if (ret.flag == 1) {
+          console.log(1, res)
+          // that.setData({
+          //   subject_list: ret.data.subject_list
+          // })
+        }
+      }
+    })
+  },
+  onReady: function () {
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+
+  }
+})

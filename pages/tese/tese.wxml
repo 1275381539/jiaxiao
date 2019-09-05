@@ -1,0 +1,26 @@
+<view class='box' wx:for='{{list}}' wx:key="index">
+  <view class='box-l'>
+    <view class='box-l-t'>
+      <text class='jz'>{{list[index].subjecttype.subject_type}} </text>
+      <text style='color:#0099fd'> {{list[index].subject_name}} </text>
+      <text class='price'> ￥{{list[index].price}}</text>
+    </view>
+    <view class='box-l-to'>{{list[index].content}}</view>
+  </view>
+  <view class='box-r' bindtap='statement' data-id='{{list[index].id}}' data-price='{{list[index].price}}' data-hour='{{list[index].hours}}'>在线缴费</view>
+</view>
+<view class='agreement'><radio checked="{{checked}}" color='#deab8a' catchtap='checkedTap'></radio>阅读并同意<navigator hover-class='none' url='/pages/word/word'>《运通驾校培训协议》</navigator></view>
+<view class='agreement'><radio checked="{{checkedxieyi}}" color='#deab8a' catchtap='checkedxieyi'></radio>阅读并同意<navigator hover-class='none' url='/pages/word/word'>《微信小程序使用协议》</navigator></view>
+<text class='tishi'>已报过科目的学员，特色班费用只需补充费用差价即可</text>
+
+ <view class='statement' wx:if='{{statement}}'>
+  <view class='statement-content'>
+    <view class='statement-tit'>为了加强驾驶人培训管理工作，规范教学，提高质量，您与海贝易通在认识一致的情况下同意此合同：</view>
+    <view class='statement-con'>您自愿选择本公司进行驾驶技能培训，遵守海贝易通所提供业务流程办理入学手续，提供相关合法资料及所有联系方式，您联系方式变更的应及时告知海贝易通，如出现变更后未告知海贝易通的，自行承担相应责任。</view>
+    <view class='statement-btn'>
+      <view bindtap='qxstatement'>取消</view>
+      <view  wx:if='{{diabled}}' style='background:#ccc;'>{{dis}}</view>
+      <view bindtap='pay' wx:else>已知晓</view>
+    </view>
+  </view>
+ </view>

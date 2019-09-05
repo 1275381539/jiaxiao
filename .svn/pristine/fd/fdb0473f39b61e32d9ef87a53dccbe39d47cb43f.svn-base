@@ -1,0 +1,36 @@
+<view class='box' wx:if="{{kemu == 1}}">
+  <view class='tit'>科目二</view>
+  <view class='con'>
+    <text>100元/学时</text>
+    <view class='btn'>
+      <view bindtap='remove2'>-</view>
+      <view>{{er}}</view>
+      <view bindtap='add2'>+</view>
+    </view>
+  </view>
+</view>
+
+<view class='box' wx:else>
+  <view class='tit'>科目三</view>
+  <view class='con'>
+    <text>100元/学时</text>
+    <view class='btn'>
+      <view  bindtap='remove3'>-</view>
+      <view>{{san}}</view>
+      <view bindtap='add3'>+</view>
+    </view>
+  </view>
+</view>
+
+<view class='jieshao'>
+  <view class='jieshao-tit'>科目说明</view>
+  <view class='jieshao-con'>1、首次购买必须购买全套学时</view>
+  <view class='jieshao-con'>2、挂科以后可以购买单学时</view>
+  <view class='jieshao-con'>1、首次购买必须购买全套学时</view>
+  <view class='jieshao-con'>2、挂科以后可以购买单学时</view>
+</view>
+
+ <view class='pay'>
+    <view>共计:{{price}}</view>
+    <view class='pay-btn' bindtap='pay'>立即支付</view>
+ </view>

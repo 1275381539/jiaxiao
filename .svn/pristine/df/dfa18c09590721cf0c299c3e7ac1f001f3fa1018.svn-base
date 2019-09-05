@@ -1,0 +1,25 @@
+<view class='top'>
+  <view class='con'>
+    <view class='con-l'><image src="{{'http://admin.jxiao.chaojibuyers.com'+ teacher.teacher_img}}" bindtap='img'data-list="{{'http://admin.jxiao.chaojibuyers.com' + teacher.teacher_img}}" data-src="{{item}}"></image></view>
+    <view class='con-r'>
+      <view class='name'>{{teacher.teacher_name}}</view>
+      <view class='pingfen'>
+        <image src='../../image/pingfen.png'></image>
+        <text>{{teacher.fen}}分</text>
+      </view>
+      <view class='xinxi'>
+        <text style='color:#0096ff'>{{teacher.school.school_name}}</text>
+        <!-- <text class='i'></text>
+        <text>学员1026</text> -->
+        <text class='i'></text>
+        <text>教龄{{teacher.teacher_apply}}年</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class='con-text'>
+  <text class='con-text-tit'>教练简介</text>
+  <text class='con-text-con'>{{teacher.teacher_describe}}</text>
+</view>
+<!-- <view bindtap='callGetPhone' class='phone' data-phone='{{teacher.teacher_phone}}'>联系教练</view> -->

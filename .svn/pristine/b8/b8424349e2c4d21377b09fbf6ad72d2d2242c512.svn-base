@@ -1,0 +1,23 @@
+const app = getApp()
+Page({
+  data: {
+    msg:'',
+  },
+  onLoad: function (options) {
+    var that = this
+    wx.request({ // 获取所有信息
+      url: app.globalData.url + '/wx/index/agreement.html',
+      data: {
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        that.setData({
+          msg: res.data.agreement
+        })
+      }
+    })
+  }
+})

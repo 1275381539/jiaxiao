@@ -1,0 +1,22 @@
+<view class='box'>
+  <view class='tit'>
+    <view class="{{tab==1?'active':''}}" bindtap='navTab' data-id="1">匿名</view>
+    <view class="{{tab==0?'active':''}}" bindtap='navTab' data-id="0">不匿名</view>
+  </view>
+  <view class='con'>
+    <text>联系方式</text>
+    <input type='text' placeholder='请填写有效的联系方式' bindinput="tel"></input>
+  </view>
+  <view class='con'>
+    <text>选择驾校</text>
+    <picker class='jz' bindchange="schoolList" value="{{num}}" range="{{schoolList}}">
+      <view>{{schoolList[num]}}</view>
+    </picker>
+  </view>
+  <view class='con'>
+    <text>填写内容</text>
+    <textarea type='number' placeholder='请填写您的意见和反馈' bindinput="con"></textarea>
+  </view>
+</view>
+<view class='btn' bindtap='btn'>我要反馈</view>
+

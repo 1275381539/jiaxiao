@@ -1,0 +1,46 @@
+var app = getApp()
+Page({
+  data: {
+    jiazhao:''
+  },
+  chooseImage: function () {
+    let _this = this;
+    wx.chooseImage({
+      sizeType: ['compressed'], // original 原图，compressed 压缩图，默认二者都有
+      sourceType: ['album', 'camera'], // album 从相册选图，camera 使用相机，默认二者都有
+      success: function (res) {
+         // var tempFilePaths = res.tempFilePaths;
+        wx.showToast({
+          title: '正在上传...',
+          icon: 'loading',
+          mask: true,
+          duration:1000
+        }) 
+        wx.uploadFile({
+          url: app.globalData.url + '/wx/index/idcard.html',
+          filePath: res.tempFilePaths[0],
+          name: 'file',
+          success: res=> {
+            console.log(res)
+          }
+        })
+      }
+    })
+  },
+  // 支付
+  pay:function(){
+    console.log(123)
+    var  that = this
+    let token = wx.getStorageSync('token')
+  },
+  onLoad: function (options) {
+    var that = this
+    let jiazhao = wx.getStorageSync('jiazhao')
+    that.setData({
+      jiazhao: jiazhao
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

@@ -1,0 +1,54 @@
+.tetx{
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  width: 700rpx;
+  margin:0 auto;
+  margin-top: 30rpx;
+  height: 400rpx;
+}
+.tetx textarea{
+  width: 100%;
+  font-size: 26rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+}
+.fabu{
+  width: 260rpx;
+  height: 72rpx;
+  line-height: 72rpx;
+  text-align: center;
+  background:#ffd34e;
+  color: #fff;
+  position: fixed;
+  bottom: 100rpx;
+  left: 50%;
+  margin-left: -130rpx;
+  border-radius:50rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.start{
+  width: 700rpx;
+  margin:0 auto;
+  margin-top: 50rpx;
+}
+.start-tit{
+  font-size: 32rpx;
+  color: #333;
+  font-weight: bold;
+}
+.pingjia view{
+  display: inline-block;
+  margin-top: 30rpx;
+  font-size: 28rpx;
+  border: 1px solid #999;
+  border-radius:30rpx;
+  color: #999;
+  padding: 2rpx 20rpx;
+  margin-right: 30rpx;
+}
+.pingjia view.active{
+  border-color: #ffd34e;
+  background: #ffd34e;
+  color: #fff;
+}

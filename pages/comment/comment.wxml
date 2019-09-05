@@ -1,0 +1,12 @@
+<view class='tetx'>
+  <textarea placeholder='请谈谈你对驾校或者教练的看法' value='{{concent}}' bindblur='bindTextAreaBlur'   focus="{{focus}}"></textarea>
+</view>
+<view class='start'>
+  <view class='start-tit'>驾校评分</view>
+  <view class='pingjia'>
+    <view bindtap='good' data-index="{{good}}" class="{{good?'active':''}}">好评</view>
+    <view bindtap='zhong' data-index="{{zhong}}" class="{{zhong?'active':''}}">中评</view>
+    <view bindtap='cha' data-index="{{cha}}" class="{{cha?'active':''}}">差评</view>
+  </view>
+</view>
+<view class='fabu' bindtap='fabu'>发表</view>

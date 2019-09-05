@@ -1,0 +1,32 @@
+<page>
+  <view class='mine-nav'>
+    <view class="mine-tab {{tab==0?'active':''}}" bindtap='navTab' data-id="0">全部</view>
+    <view class="mine-tab {{tab==1?'active':''}}" bindtap='navTab' data-id="1">待付款</view>
+    <view class="mine-tab {{tab==2?'active':''}}" bindtap='navTab' data-id="2">已完成</view>
+  </view>
+
+  <view class='list' wx:for="{{list}}" wx:key="index">
+    <view class='list-top'>
+      <view class='list-top-l'>
+        <image src='{{list[index].school.school_icon}}'></image><text>{{list[index].school.school_name}}</text>
+      </view>
+      <view class='list-top-r'>{{list[index].status}}</view>
+    </view>
+
+    <view class='con'>
+      <text class='con-l'>{{list[index].subject_name}}</text>
+      <text class='con-r'>￥{{list[index].price}}</text>
+    </view>
+
+    <view class='time'>下单时间：{{list[index].time}}</view>
+    <view class='time'>订单号：{{list[index].order_sn}}</view>
+
+    <view class='btn' wx:if="{{list[index].status == '未付款'}}">
+      <view class='cancel' bindtap='quxiao' data-id='{{list[index].order_sn}}'>取消</view>
+      <view class='pay' bindtap='pay' data-id='{{list[index].order_sn}}'>支付</view>
+    </view>
+        <view class='btn' wx:else>
+      <navigator class='pay' url='../comment/comment?id={{list[index].school_id}}'>去评价</navigator>
+    </view>
+  </view>
+</page>

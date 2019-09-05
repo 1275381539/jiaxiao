@@ -1,0 +1,101 @@
+var app = getApp()
+Page({
+  data: {
+    jiaxiao: [],
+    jiaxiaoO:[],
+    jiazhao: ['C1','C2'],
+    none:true,
+    index:0,
+    jHinde:0,
+    name:'', // 姓名
+    sex: '', // 性别
+    tel: '', // 手机号码
+    id: '', // 身份证号码
+    region: ['陕西省', '西安市', '雁塔区'],
+    customItem: '全部',
+    base:''
+  },
+  jiaxiao: function (e) {
+    this.setData({
+      index: e.detail.value
+    })
+  },
+  jiazhao:function(e){
+    this.setData({
+      jHinde: e.detail.value
+    })
+  },
+  // 获取输入的姓名
+  userNameInput:function(e){
+    this.setData({
+      name: e.detail.value
+    })
+  },
+  // 获取输入的性别
+  radioChange: function (e) {
+    this.setData({
+      sex: e.detail.value
+    })
+  },
+  // 获取输入的手机号码
+  telInput: function (e) {
+    this.setData({
+      tel: e.detail.value
+    })
+  },
+  // 获取输入的身份证号码
+  idInput: function (e) {
+    this.setData({
+      id: e.detail.value
+    })
+  },
+  // 获取地址
+  bindRegionChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      region: e.detail.value
+    })
+  },
+  chooseImage(e) {
+    wx.chooseImage({
+      sizeType: ['original', 'compressed'],  //可选择原图或压缩后的图片
+      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
+      success: res => {
+        const images = this.data.images.concat(res.tempFilePaths)
+        // 限制最多只能留下3张照片
+        this.data.images = images.length <= 3 ? images : images.slice(0, 3)
+        $digest(this)
+      }
+    })
+  },
+  // 支付
+  pay:function(){
+    console.log(123)
+    var  that = this
+    let token = wx.getStorageSync('token')
+
+  },
+  onLoad: function (options) {
+
+  },
+  onReady: function () {
+  },
+  onShow: function () {
+
+  },
+  onHide: function () {
+
+  },
+  onUnload: function () {
+
+  },
+  onPullDownRefresh: function () {
+
+  },
+  onReachBottom: function () {
+
+  },
+  onShareAppMessage: function () {
+
+  }
+})

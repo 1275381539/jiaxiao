@@ -1,0 +1,12 @@
+<view class='box' wx:for='{{list}}' wx:key="index">
+  <view class='box-l'>
+    <view class='box-l-t'>
+      <text class='jz'>{{list[index].subjecttype.subject_type}} </text>
+      <text style='color:#0099fd'> {{list[index].subject_name}} </text>
+      <text class='price'> ￥{{list[index].price}}</text>
+    </view>
+    <view class='box-l-to'>按自己所需时间练车，每次训练不超过2人</view>
+  </view>
+  <view class='box-r' bindtap='pay'>在线缴费</view>
+</view>
+<text class='tishi'>已报过科目的学员，特色班费用只需补充费用差价即可</text>

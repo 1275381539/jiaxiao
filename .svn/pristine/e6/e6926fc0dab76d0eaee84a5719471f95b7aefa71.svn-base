@@ -1,0 +1,83 @@
+<view class='top'>
+  <swiper autoplay="true" circular="true" > 
+    <block wx:for="{{imgUrls}}" wx:key="index">
+      <swiper-item>
+         <image src="{{'http://admin.jxiao.chaojibuyers.com'+imgUrls[index].banner}}"/>
+      </swiper-item>
+    </block>
+  </swiper>
+</view> 
+
+<view class='nav'>
+  <navigator hover-class='none' url='../ranking/ranking'>
+  <image src='../../image/icon_02.png'></image>
+  <text>驾校排行</text>
+  </navigator>
+
+  <navigator hover-class='none' url='../archives/archives'>
+  <image src='../../image/icon_06.png'></image>
+  <text>报名流程</text>
+  </navigator>
+
+  <navigator hover-class='none' url='../news/news'>
+    <image src='../../image/icon_09.png'></image>
+    <text>行业监管</text>
+  </navigator>
+
+  <button open-type="contact">
+    <image src='../../image/icon_04.png'></image>
+    <text>客服中心</text>
+  </button>
+</view>
+
+<navigator class='guang' hover-class='none' url='../details/details?id={{advert.school.id}}'>
+  <image src="{{'http://admin.jxiao.chaojibuyers.com' + advert.banner}}"></image>
+  <view class='guang-top'>
+    <text>{{advert.school.school_name}}</text>
+  </view>
+  <view class='guang-bot'>
+    <text>{{advert.content}}</text>
+  </view>
+</navigator>
+
+<navigator hover-class='none' class='tese' wx:if="{{jzts}}" url='/pages/tese/tese?id={{user.school_id}}'>
+  <image src='http://img.chaojibuyers.com:9011/jiaxiao/tese.png'></image>
+</navigator>
+
+<view class='mine'>
+  <picker class='jz' bindchange="jiazhao" value="{{jHinde}}" range="{{jiazhao}}">
+    <view>{{jiazhao[jHinde]}}</view>
+  </picker>
+  <view class='mine-nav'>
+    <view class="mine-tab {{tab==0?'active':''}}" bindtap='navTab' data-id="0">推荐</view>
+    <view class="mine-tab {{tab==1?'active':''}}"  bindtap='navTab' data-id="1">距离</view>
+    <view class="mine-tab {{tab==2?'active':''}}"  bindtap='navTab' data-id="2">足迹</view>
+  </view>
+
+  <view class='nav-t'>
+    <view class='nav-t-tit'>筛选</view>
+    <scroll-view class='nav-t-bot' scroll-x="true" style=" white-space: nowrap; display: flex" >
+      <view class="nav-t-con {{item.flg?'nav-active':''}}" bindtap='shai' wx:for="{{mark}}" wx:key="index" data-index='{{index}}'>{{mark[index].mark}}</view>
+    </scroll-view>
+  </view>  
+
+  <navigator class='list' hover-class='none' url='../details/details?id={{school[index].id}}' wx:for="{{school}}" wx:key="index">
+    <view class='list-l'>
+      <image src='{{school[index].school_icon}}'></image>
+      <view class='list-l-r'>
+        <view class='tit'>{{school[index].school_name}}</view>
+        <view class='pingfen'>
+          <image src='../../image/pingfen.png'></image><text>{{school[index].fen}}分</text>
+        </view>
+        <view class='price'>
+          <text style='color:#ff4d65'>￥{{school[index].school_subject.price}}</text> <text style='margin:0 16rpx'>{{school[index].subject}}</text> <text>{{school[index].subject_name}}</text>
+        </view>
+      </view>
+    </view>
+    <view class='list-r'>
+      <view class='list-r-t'>距离{{school[index].distance/1000}}km</view>
+      <view class='list-r-b'>驾校排行榜<text style='color:#ff4d65'>第{{school[index].orders}}位</text></view>
+    </view>
+  </navigator>
+</view>
+

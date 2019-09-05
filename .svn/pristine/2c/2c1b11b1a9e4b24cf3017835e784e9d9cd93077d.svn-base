@@ -1,0 +1,14 @@
+<view class='top'>
+  <view class='header'>
+    <image src='{{user.headimgurl}}'></image>
+    <view class='name'>{{user.nickname}}</view>
+    <text class='jx-name' wx:if="{{school != null}}">{{school}}</text>
+  </view>
+</view>
+<view class='list'>
+  <navigator hover-class='none' url='../order/order'>我的订单</navigator>
+  <navigator hover-class='none' >驾校入驻</navigator>
+  <navigator hover-class='none'><button  open-type="contact">客服中心</button></navigator>
+  <navigator hover-class='none'><button  open-type="contact">信箱投诉</button></navigator>
+  <navigator hover-class='none'><button  open-type="contact">申请退款</button></navigator>
+</view>

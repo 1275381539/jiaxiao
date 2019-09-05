@@ -1,0 +1,340 @@
+
+.top swiper{
+  width: 750rpx;
+  height: 400rpx;
+}
+.top image{
+  width: 750rpx;
+  height: 400rpx;
+}
+.infor{
+  width: 700rpx;
+  height: 300rpx;
+  box-sizing: border-box;
+  background: #fff;
+  position: relative;
+  border-radius: 20rpx;
+  margin: 0 auto;
+  top: -60rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.3);
+  padding: 50rpx 30rpx;
+}
+.tit{
+  color: #2a2a2a;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.infor-top image{
+  width: 88rpx;
+  height: 28rpx;
+  vertical-align: middle;
+  margin-left: 10rpx;
+}
+.biaoqian{
+  color: #666666;
+  font-size: 24rpx;
+  margin: 30rpx 0 40rpx;
+}
+.biaoqian text{
+  margin-right: 20rpx;
+  border: 1px solid #e5e5e5;
+  border-radius: 30rpx;
+  padding: 4rpx 16rpx;
+}
+.infor navigator{
+  color: #424242;
+  font-size: 26rpx;
+  margin: 20rpx 0;
+  padding: 0 50rpx;
+  position: relative;
+}
+.infor navigator::before{
+    content: "";
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  left: 0;
+  top:0;
+}
+.infor navigator:nth-of-type(1)::before{
+  background: url(http://47.95.245.138:9011/banner/f6beb0d291244ab3bf06e037b7a3180d.png) no-repeat;
+  background-size: 100%;
+}
+.infor navigator:nth-of-type(2)::before{
+  background: url(http://47.95.245.138:9011/banner/54594819d0854683bbcdb92509aabe4e.png) no-repeat;
+  background-size: 100%;
+}
+.infor navigator:nth-of-type(3)::before{
+  background: url(http://47.95.245.138:9011/banner/8b1b9b47dc7a4d049f0f230524ee8cb4.png) no-repeat;
+  background-size: 100%;
+}
+.infor navigator::after{
+  content: "";
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 0;
+  top:6rpx;
+  background: url(http://47.95.245.138:9011/banner/99fbd7b4981247c187c570ec02179bcb.png) no-repeat;
+  background-size: 100%;
+}
+.nav{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  color: #666;
+  overflow: hidden;
+  font-size: 32rpx;
+  font-weight: bold;
+  margin-top: -40rpx;
+}
+.nav view{
+  width: 50%;
+  text-align: center;
+  float: left;
+}
+.nav view.active{
+  color: #333;
+  position: relative;
+}
+.nav view.active::after{
+  content: "";
+  width: 100rpx;
+  height: 4rpx;
+  position: absolute;
+  background: #ffc003;
+  bottom: 0;
+  left:50%;
+  margin-left: -50rpx;
+}
+.nav-list{
+  padding: 0 26rpx;
+  box-sizing: border-box;
+  color: #2c2c2c;
+}
+.nav-list-top-l,.nav-list-bot-l{
+  float: left;
+  font-size: 30rpx;
+  font-weight: bold ;
+  margin-top: 20rpx;
+}
+.nav-list-top{
+  border-bottom: 1px solid #dcdcdc;
+  padding: 50rpx 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.nav-list-top:last-of-type{
+  border: none;
+}
+.nav-list-bot{
+  padding: 50rpx 0;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+.nav-pay{
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  float: right;
+  margin-top: 20rpx;
+  color: #fff;
+  background-image: linear-gradient(to right , #07e8e0, #1eb1f4);
+  font-size: 28rpx;
+  border-radius: 50rpx;
+}
+.nav-pay-yi{
+  width: 160rpx;
+  height: 60rpx;
+  text-align: center;
+  line-height: 60rpx;
+  float: right;
+  margin-top: 20rpx;
+  color: #999;
+  font-size: 28rpx;
+  border-radius: 50rpx;
+}
+.j-list{
+  border-bottom: 1px solid #dcdcdc;
+  overflow: hidden;
+  padding: 50rpx 0;
+}
+.j-img{
+  width: 90rpx;
+  height: 90rpx;
+  float: left;
+  margin-right: 30rpx;
+  margin-top: 30rpx;
+}
+.j-img image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+}
+.j-list:last-of-type{
+  border-bottom: none;
+}
+.j-xinxi{
+  float: left;
+}
+.j-pingfen image{
+  width: 22rpx;
+  height: 22rpx;
+  margin-right: 4rpx;
+}
+.j-name{
+  color: #2b2b2b;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+.j-pingfen{
+  margin: 16rpx 0;
+  font-size: 24rpx;
+}
+.j-pingfen text{
+  margin-left: 10rpx;
+}
+.j-jieshao{
+  font-size: 24rpx;
+}
+.j-jieshao .i{
+  display: inline-block;
+  height: 20rpx;
+  width:20rpx;
+  margin-right:20rpx;
+  border-right: 2rpx solid #a6a6a6;
+}
+.brief{
+  background: #f4f4f4;
+  padding: 20rpx 0;
+}
+.brief-con{
+  background: #fff;
+  padding: 50rpx 26rpx;
+}
+.brief-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  position: relative;
+}
+.brief-text{
+  font-size: 26rpx;
+  margin: 14rpx 0;
+}
+.brief-tit::after{
+  content: "";
+  width: 26rpx;
+  height: 26rpx;
+  position: absolute;
+  right: 0;
+  top:6rpx;
+  background: url(http://47.95.245.138:9011/banner/99fbd7b4981247c187c570ec02179bcb.png) no-repeat;
+  background-size: 100%;
+}
+.yan{
+  position: relative;
+}
+.yan::after{
+  content: "";
+  width: 126rpx;
+  height: 46rpx;
+  position: absolute;
+  right: 0;
+  top:6rpx;
+  background: url(http://47.95.245.138:9011/banner/c281247d920a422c97e57b8af0354e0d.png) no-repeat;
+  background-size: 100%;
+}
+button::after{
+  border:none;
+}
+button{
+  border-radius:0;
+  background: none;
+  margin: 0;
+  padding: 0;
+  line-height: 100rpx;
+  color: #333;
+}
+.btn{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 100rpx;
+  background: #ffc003;
+}
+.btn button{
+  float: left;
+  width: 50%;
+  height: 100rpx;
+  position: relative
+}
+.btn button:last-of-type::before{
+  content: "";
+  width: 2rpx;
+  height:50rpx;
+  background: #999;
+  position: absolute;
+  left: 0;
+  top: 25rpx;
+}
+.btn-hover{
+  transform: scale(0.8); /*缩放*/
+}
+.evaluate{
+  background: #f4f4f4;
+  padding-bottom: 100rpx;
+}
+.evaluate-box{
+  background: #fff;
+  padding: 50rpx 26rpx;
+}
+.evaluate-num{
+  margin: 20rpx 0;
+  color: #2b2b2b;
+}
+.evaluate-num text{
+  background: #f4f4f4;
+  font-size: 26rpx;
+  border-radius: 30rpx;
+  margin-right: 20rpx;
+  padding: 4rpx 20rpx;
+}
+.evaluate-list{
+  border-bottom: 1px  solid #e5e5e5;
+  padding: 40rpx 0; 
+  box-sizing: border-box;
+}
+.evaluate-list-img image{
+  width: 50rpx;
+  height: 50rpx;
+  vertical-align: middle;
+  float: left;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+  border-radius: 50%;
+}
+.evaluate-list-name{
+  color: #2b2b2b;
+  font-size: 28rpx;
+}
+.evaluate-list-con{
+  margin-top: 30rpx;
+  font-size: 26rpx;
+}
+.science-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #2b2b2b;
+  position: relative;
+}
+.evaluate-num text.pl-active{
+  background: #ffc003
+}
+.color{
+  background: #ffa800;
+  color: #fff;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}

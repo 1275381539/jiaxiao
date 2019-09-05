@@ -1,0 +1,13 @@
+<view class='top'>
+  <view class='header'>
+    <image src='../../image/me-header.png'></image>
+    <view class='name'>安康驾校学员小E</view>
+    <text class='jx-name'>恒顺驾校</text>
+  </view>
+</view>
+<view class='list'>
+  <navigator hover-class='none' url='../order/order'>我的订单</navigator>
+  <navigator hover-class='none' >学习进度</navigator>
+  <navigator hover-class='none'><button  open-type="contact">客服中心</button></navigator>
+  <navigator hover-class='none'>信箱投诉</navigator>
+</view>

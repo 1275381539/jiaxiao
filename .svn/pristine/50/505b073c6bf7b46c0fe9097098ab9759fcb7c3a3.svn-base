@@ -1,0 +1,18 @@
+<!-- 授权页面 -->
+<view wx:if="{{isHide}}">
+  <swiper circular="true" indicator-dots="true" indicator-active-color="#ffc704" indicator-color="#efefef"	> 
+    <block>
+      <swiper-item>
+         <image src="../../image/load1.png"/>
+         <view class='tit'>服务驾驶培训行业</view>
+         <text class='con'>打造一流学车体验</text>
+      </swiper-item>
+      <swiper-item>
+         <image src="../../image/load1.png"/>
+         <view class='tit'>服务驾驶培训行业</view>
+         <text class='con'>打造一流学车体验</text>
+      </swiper-item>
+    </block>
+  </swiper>
+  <button open-type="getUserInfo" bindgetuserinfo="getUserInfo"><image src='../../image/weixin.png'></image>微信快捷登录</button>
+</view>

@@ -1,0 +1,25 @@
+.content{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 20rpx;
+  font-size: 26rpx;
+  color: #333;
+  text-indent:56rpx;
+  padding-bottom: 30rpx;
+  line-height:46rpx;
+}
+.title{
+  font-weight: bold;
+  font-size: 32rpx;
+  text-align: center;
+  margin-bottom: 20rpx;
+  text-indent:0;
+}
+.title-little{
+  font-weight: bold;
+  font-size: 26rpx;
+  text-indent:0rpx;
+}
+.duan{
+  margin-bottom:22rpx;
+}

@@ -1,0 +1,31 @@
+<view class='list' wx:for="{{keshi}}" wx:key="property">
+  <view class='list-top'>
+    <image src='../../image/learning.png'></image>
+    <view>{{item.name}}</view>
+    <view wx:if='{{item.time == item.total}}'>已学完</view>
+    <view wx:elif="{{item.data}}">进行中</view>
+    <view wx:else>未开始</view>
+    <view bindtap='none' data-index='{{index}}' wx:if="{{!item.flg}}">查看详情</view>
+    <view bindtap='none' data-index='{{index}}' wx:if="{{item.flg}}">收起详情</view>
+  </view>
+  <view class='list-bot' >
+    <view wx:if="{{item.name == '科目二' || item.name == '科目三'}}">总课时：{{item.total/60}}课时</view>
+    <view>已学习：{{item.time}}分钟</view>
+  </view>
+
+  <view wx:if='{{item.flg}}' data-id='{{index}}'>
+    <view class='list-none' wx:if="{{item.data != null}}">
+      <view class='none-top'>
+        <view>时间</view>
+        <view>课时</view>
+      </view>
+      <view class='none-content' wx:for="{{item.data}}" wx:key='index'>
+        <view>{{item.time}}</view>
+        <view></view>
+        <view>{{item.effective_time}}分钟</view>
+      </view>
+    </view>
+  </view>
+</view>
+
+

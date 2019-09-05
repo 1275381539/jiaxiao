@@ -1,0 +1,47 @@
+const app = getApp()
+Page({
+  data: {
+    markers: [{
+      id: 1,
+      latitude: 33.34593850874471,
+      longitude: 110.19112451171875,
+    }],
+    scale:16,
+    // covers: [{
+    //   latitude: 23.099994,
+    //   longitude: 113.344520,
+    //   iconPath: '/image/location.png'
+    // }, {
+    //   latitude: 23.099994,
+    //   longitude: 113.304520,
+    //   iconPath: '/image/location.png'
+    // }],
+    school:''
+  },
+  onLoad: function (ops) {
+    var that = this;
+    let uid = wx.getStorageSync('uid');
+    // 获取驾校信息
+    wx.request({
+      url: app.globalData.url + '/wx/index/view.html',
+      data: {
+        uid: uid,
+        id: ops.id
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success: function (res) {
+        var ret = res.data.data
+        console.log(ret.School)
+        that.setData({
+          school: ret.School,
+        })
+      }
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

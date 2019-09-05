@@ -1,0 +1,27 @@
+<view class='box'>
+  <text wx:if="{{kemu.subjecttype.subject_type == 'C1' || kemu.subjecttype.subject_type == 'C2'}}">{{kemu.subjecttype.subject_type}}{{kemu.subject_name}}</text>
+  <text wx:else>{{kemu.subject_name}}</text>
+  <view class='con'>
+    <text>{{danjia}}元/学时</text>
+    <view class='btn'>
+      <view bindtap='remove2'>-</view>
+      <view>{{num}}</view>
+      <view bindtap='add2'>+</view>
+    </view>
+  </view>
+</view>
+
+<view class='agreement'><radio checked="{{checked}}" color='#deab8a' catchtap='checkedTap'></radio>同意 <navigator hover-class='none' url='/pages/word/word'>相关协议</navigator> 并已知晓。</view>
+
+<view class='jieshao'>
+  <view class='jieshao-tit'>科目说明</view>
+  <view class='jieshao-con'>1、首次购买必须购买全套学时</view>
+  <view class='jieshao-con'>2、挂科以后可以购买单学时</view>
+  <view class='jieshao-con'>1、首次购买必须购买全套学时</view>
+  <view class='jieshao-con'>2、挂科以后可以购买单学时</view>
+</view>
+
+ <view class='pay'>
+    <view>共计:{{price}}</view>
+    <view class='pay-btn' bindtap='pay'>立即支付</view>
+ </view>

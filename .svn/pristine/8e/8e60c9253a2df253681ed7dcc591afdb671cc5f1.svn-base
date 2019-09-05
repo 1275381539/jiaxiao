@@ -1,0 +1,17 @@
+<view class='top'>
+  <view class='header'>
+    <image src='{{user.headimgurl}}'></image>
+    <view class='name'>{{user.nickname}}</view>
+    <text class='jx-name' wx:if="{{school != null}}">{{school}}</text>
+  </view>
+</view>
+<navigator hover-class='none' class='tese' wx:if="{{jzt}}"  url='/pages/tese/tese'>
+  <image src='http://img.chaojibuyers.com:9011/jiaxiao/tese.png'></image>
+</navigator>
+<view class="list {{jzt?'':'act'}}">
+  <navigator hover-class='none' url='../order/order'>我的订单</navigator>
+  <navigator hover-class='none' url='/pages/jiaxiaoruzhu/jiaxiaoruzhu?id={{user.id}}'>驾校入驻</navigator>
+  <navigator hover-class='none'><button  open-type="contact">客服中心</button></navigator>
+  <navigator hover-class='none' url='/pages/complaint/complaint?id={{user.id}}'>信箱投诉</navigator>
+  <navigator hover-class='none'><button  open-type="contact">申请退款</button></navigator>
+</view>

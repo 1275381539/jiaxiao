@@ -1,0 +1,13 @@
+.science-img image{
+  width: 220rpx;
+  height: 164rpx;
+  margin-right: 18rpx;
+}
+.science-img image:nth-of-type(3n){
+  margin-right: 0;
+}
+.science-img{
+  width: 700rpx;
+  margin: 0 auto;
+  margin-top: 30rpx;
+}

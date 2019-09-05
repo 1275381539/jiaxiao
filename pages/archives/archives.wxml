@@ -1,0 +1,31 @@
+<view>
+  <view class='tit' wx:if="{{index == 1}}">步骤一：选择驾校</view>
+  <view class='tit' wx:elif="{{index == 2}}">步骤二：交纳建档费用</view>
+  <view class='tit' wx:else>开始学车之旅吧</view>
+  <swiper  current="0" bindchange='onSlideChangeEnd'>
+    <swiper-item>
+      <view class='s-tit'>怎样选择驾校</view>
+      <view class='s-con'>海贝驾考联盟收罗安康本地驾校，并依靠客观的学员评价和学员数，给出权威的驾校排行，可作为学员选择驾校的参考依据。</view>
+      <view class='s-tit'>选择驾校的方式</view>
+      <view class='s-con'>点击首页下半部驾校内容进入驾校详情页，并查看驾校相关内容</view>
+    </swiper-item>
+
+    <swiper-item>
+      <view class='s-tit'>建档费是什么</view>
+      <view class='s-con'>所有学员在首次报名时，必须缴纳300元资料建档费才能在学时系统注册学时信息。</view>
+      <view class='s-tit'>怎样选择科目</view>
+      <view class='s-con'>交纳建档费用后，页面自动跳转为联系客服页面，根据学员需求定制科目类别、教练、以及体检相关内容。</view>
+      <view class='s-tit'>报名条件</view>
+      <view class='s-con'>满足体检要求：18-70周岁；身高150cm以上（大型货车155cm以上）；无红绿色盲；两眼裸视力或矫正视力达到视力表4.9以上，均可报名。</view>
+    </swiper-item>
+
+    <swiper-item>
+      <view class='img'><image src='../../image/lc.png'></image></view>
+       <view class='s-tit' style='font-size:38rpx;text-align: center;'>还没有报名驾校？海贝帮你选驾校</view>
+       <view class='s-tit' style='text-align: center;'>建档费是什么</view>
+       <view class='s-con' style='text-align: center;'>距离最近，价格合适，好评如潮</view>
+       <navigator hover-class='none' url='../ranking/ranking' class='btn'>帮我找驾校</navigator>
+    </swiper-item>
+  </swiper>
+  <view class='boot'>{{index}}/3</view>
+</view>

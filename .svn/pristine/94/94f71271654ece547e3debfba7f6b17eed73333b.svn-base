@@ -1,0 +1,45 @@
+<view class='top-tit'>学车第一步 选对驾驶证</view>
+<view class='top-con'>已为您分类好A1-F驾驶证类别</view>
+<view class='tit'>客车</view>
+<view class='con' bindtap='jia' data-text="A1">
+  <text>大型客车/A1</text>
+  <image src='../../image/8.png'></image>
+</view>
+<view class='con' bindtap='jia' data-text="A3">
+  <text>城市公交/A3</text>
+  <image src='../../image/7.png'></image>
+</view>
+<view class='con' bindtap='jia' data-text="B1">
+  <text>中型客车/B1</text>
+  <image src='../../image/6.png'></image>
+</view>
+
+<view class='tit'>货车</view>
+<view class='con' bindtap='jia' data-text="B2">
+  <text>大型货车/B2</text>
+  <image src='../../image/5.png'></image>
+</view>
+
+<view class='tit'>小轿车</view>
+<view class='con' bindtap='jia' data-text="C1">
+  <text>手动挡/C1</text>
+  <image src='../../image/4.png'></image>
+</view>
+<view class='con' bindtap='jia' data-text="C2">
+  <text>自动挡/C2</text>
+  <image src='../../image/3.png'></image>
+</view>
+
+<view class='tit' >摩托车</view>
+<view class='con' bindtap='jia' data-text="D">
+  <text>三轮摩托车/D</text>
+  <image src='../../image/2.png'></image>
+</view>
+<view class='con' bindtap='jia' data-text="E">
+  <text>两轮摩托车/E</text>
+  <image src='../../image/1.png'></image>
+</view>
+<view class='con' bindtap='jia' data-text="F">
+  <text>轻便摩托车/F</text>
+  <image src='../../image/9.png'></image>
+</view>

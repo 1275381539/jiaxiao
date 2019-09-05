@@ -1,0 +1,153 @@
+var app = getApp()
+Page({
+  data: {
+    ner:0,
+    price:100,
+    hour:1,
+    school_id:'',
+    subject_id:'',
+
+    kemu:'',
+    num: 1, //学时数
+    danjia:'',
+    first:true, // 判断是否第一次购买学时
+  },
+  // 科二选择学时
+  remove2:function(){
+    var that = this;
+    if (that.data.first){
+      wx.showToast({
+        title: "您当前不能选择课时",
+        icon: "none"
+      })
+    }else{
+      if (that.data.num == 1) {
+        wx.showToast({
+          title: "一次购买不能小于1课时",
+          icon: "none"
+        })
+      } else {
+        var n = that.data.num;
+        n = n - 1;
+        that.setData({
+          num: n,
+          price: n * that.data.danjia
+        })
+      }
+    }
+  },
+  add2:function(){
+    var that = this;
+    if (that.data.first) {
+      wx.showToast({
+        title: "您当前不能选择课时",
+        icon: "none"
+      })
+    } else {
+        var n = that.data.num;
+        n = n + 1;
+        that.setData({
+          num: n,
+          price: n * that.data.danjia
+        })
+    }
+  },
+  onLoad: function (ops) {
+    var that = this;
+    let uid = wx.getStorageSync('uid')
+    that.setData({
+      school_id:ops.id,
+      subject_id:ops.lid,
+    })
+    wx.request({ //获取之前有没有购买过学时
+      url: app.globalData.url + '/wx/index/query-order.html',
+      method: 'POST',
+      data: {
+        uid: uid,
+        subject_id: ops.lid
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success: res => {
+        var ret = res.data;
+        //单个学时的价钱
+        var dan = ret.list[0].price / ret.list[0].hours; 
+        if(ret.data){ //没有购买过学时的
+          that.setData({
+            first: true,
+            num: ret.list[0].hours,
+          })
+        }else{ // 购买过学时的
+          that.setData({
+            first: false,
+            num:1
+          })
+        }
+        that.setData({
+          kemu: ret.list[0],
+          danjia: dan,
+          price: that.data.num * dan
+        })
+      }
+    })
+  },
+  // 支付
+  pay:function(){
+    var that = this;
+    let uid = wx.getStorageSync('uid')
+    wx.request({
+      url: app.globalData.url + '/wx/index/keshi-pay.html',
+      method: 'POST',
+      data: {
+        uid: uid,
+        school_id:that.data.school_id,
+        subject_id: that.data.subject_id,
+        price: that.data.price,
+        class_hour: that.data.hour,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded'
+      },
+      success:res=>{
+        var ret = res.data.data
+        wx.requestPayment({
+          timeStamp: ret.timeStamp,
+          nonceStr: ret.nonceStr,
+          package: ret.package,
+          signType: 'MD5',
+          paySign: ret.paySign,
+          success(res) {
+            wx.showModal({
+              title: '提示',
+              content: "支付成功",
+              showCancel: false,//是否显示取消按钮
+              confirmText: "确定",//默认是“确定”
+              confirmColor: '#000',//确定文字的颜色
+              success: function (res) {
+                if (res.cancel) {
+                  //点击取消,默认隐藏弹框
+                } else {
+                  //点击确定
+                  wx.redirectTo({
+                    url: '/pages/details/details',
+                  })
+                }
+              }
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              icon: "loading",
+              title: '支付失败',
+            })
+            that.onShow();
+          }
+        })
+      }
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

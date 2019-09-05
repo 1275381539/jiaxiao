@@ -1,0 +1,26 @@
+const app = getApp()
+Page({
+  data: {
+    markers: [{
+      id: 1,
+      latitude: 33.34593850874471,
+      longitude: 110.19112451171875,
+    }],
+    scale:16,
+    school:''
+  },
+  onLoad: function (ops) {
+    var that = this;
+    let uid = wx.getStorageSync('uid');
+    let lat = wx.getStorageSync('latitude')
+    let lng = wx.getStorageSync('longitude')
+    wx.openLocation({
+      latitude:lat,
+      longitude:lng,
+      scale: 16
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

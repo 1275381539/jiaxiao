@@ -1,0 +1,39 @@
+<view class='box'>
+  <text wx:if="{{kemu.subjecttype.subject_type == 'C1' || kemu.subjecttype.subject_type == 'C2'}}">{{kemu.subjecttype.subject_type}}{{kemu.subject_name}}</text>
+  <text wx:else>{{kemu.subject_name}}</text>
+  <view class='con'>
+    <text>{{danjia}}元/学时</text>
+    <view class='btn'>
+      <view bindtap='remove2'>-</view>
+      <view>{{num}}</view>
+      <view bindtap='add2'>+</view>
+    </view>
+  </view>
+</view>
+
+
+
+<view class='jieshao'>
+  <view class='jieshao-tit'>科目说明</view>
+  <view class='jieshao-con'>1、首次购买必须购买全套学时</view>
+  <view class='jieshao-con'>2、挂科以后可以购买单学时</view>
+  <view class='jieshao-con'>1、首次购买必须购买全套学时</view>
+  <view class='jieshao-con'>2、挂科以后可以购买单学时</view>
+</view>
+
+ <view class='pay'>
+    <label class='agreement'><radio checked="{{checked}}" color='#deab8a' catchtap='checkedTap'></radio>以阅读并同意<navigator hover-class='none'  url='/pages/word/word'>《运通驾校培训协议》</navigator></label>
+    <view class='pay-btn' bindtap='statement'>立即支付￥<text>{{price}}</text></view>
+ </view>
+
+ <view class='statement' wx:if='{{statement}}'>
+  <view class='statement-content'>
+    <view class='statement-tit'>为了加强驾驶人培训管理工作，规范教学，提高质量，您与海贝易通在认识一致的情况下同意此合同：</view>
+    <view class='statement-con'>您自愿选择本公司进行驾驶技能培训，遵守海贝易通所提供业务流程办理入学手续，提供相关合法资料及所有联系方式，您联系方式变更的应及时告知海贝易通，如出现变更后未告知海贝易通的，自行承担相应责任。</view>
+    <view class='statement-btn'>
+      <view bindtap='qxstatement'>取消</view>
+      <view  wx:if='{{diabled}}' style='background:#ccc;'>{{dis}}</view>
+      <view bindtap='pay' wx:else>已知晓</view>
+    </view>
+  </view>
+ </view>

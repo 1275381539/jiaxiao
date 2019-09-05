@@ -1,0 +1,26 @@
+<view class='nav'>
+  <view class="{{tab==1?'active':''}}" bindtap='navTab' data-id="1">综合排行</view>
+  <view class="{{tab==2?'active':''}}" bindtap='navTab' data-id="2">合格率排行</view>
+</view>
+
+<navigator class='list' hover-class='none' url='../details/details?id={{school[index].id}}' wx:for="{{school}}" wx:key="index">
+  <view class='list-l'>
+    <image src='{{imgUrl[index]}}' wx:if="{{index < 3}}"></image>
+    <view wx:else  class='list-l'>{{index+1}}</view>
+  </view>
+  <view class='list-r'>
+    <view class='list-r-img'>
+      <image src='{{school[index].school_icon}}'></image>
+    </view>
+    <view class='l-top'>
+      <text>{{school[index].school_name}}</text>
+      <text class='l-top-r'>距离{{school[index].distance/1000}}km</text>
+    </view>
+    <view class='pingfen'><image src='../../image/pingfen.png'></image>{{school[index].fen}}分</view>
+    <view class='price'>
+      <text class='price1'>￥{{school[index].school_subject.price}}</text>
+      <text class='price2'>{{school[index].school_subject.subjecttype.subject_type}}</text>
+      <text>{{school[index].school_subject.subject_name}}</text>
+    </view>
+  </view>
+</navigator>

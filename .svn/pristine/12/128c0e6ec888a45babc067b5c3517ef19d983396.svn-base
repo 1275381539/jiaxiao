@@ -1,0 +1,32 @@
+const app = getApp()
+Page({
+  data: {
+    user:{},
+    school:''
+  },
+  onLoad: function (options) {
+    let uid = wx.getStorageSync('uid')
+    var that = this
+    wx.request({
+      url: app.globalData.url + '/wx/index/user.html',
+      data: {
+        uid: uid,
+      },
+      header: {
+        'content-type': 'application/x-www-form-urlencoded',
+      },
+      method: 'POST',
+      success:res=>{
+        var ret = res.data.data
+        console.log(ret)
+        that.setData({
+          user:ret.user,
+          school:ret.school
+        })
+      }
+    })
+  },
+  onShareAppMessage: function () {
+
+  }
+})

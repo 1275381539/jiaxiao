@@ -1,0 +1,99 @@
+<view class='nav'>
+  <view class="{{tab==0?'active':''}}" bindtap='navTab' data-id="0">综合排行</view>
+  <view class="{{tab==1?'active':''}}" bindtap='navTab' data-id="1">合格率排行</view>
+</view>
+
+<navigator class='list' hover-class='none' url='../details/details'>
+  <view class='list-l'><image src='../../image/r1.png'></image></view>
+  <view class='list-r'>
+    <view class='list-r-img'>
+      <image src='../../image/jiaxiao.png'></image>
+    </view>
+    <view class='l-top'>
+      <text>运通驾校</text>
+      <text class='l-top-r'>距离0.1km</text>
+    </view>
+    <view class='pingfen'><image src='../../image/pingfen.png'></image>4.6分</view>
+    <view class='price'>
+      <text class='price1'>￥2400</text>
+      <text class='price2'>C2</text>
+      <text>科目三</text>
+    </view>
+  </view>
+</navigator>
+
+<navigator class='list' hover-class='none' url='../details/details'>
+  <view class='list-l'><image src='../../image/r2.png'></image></view>
+  <view class='list-r'>
+    <view class='list-r-img'>
+      <image src='../../image/jiaxiao.png'></image>
+    </view>
+    <view class='l-top'>
+      <text>运通驾校</text>
+      <text class='l-top-r'>距离0.1km</text>
+    </view>
+    <view class='pingfen'><image src='../../image/pingfen.png'></image>4.6分</view>
+    <view class='price'>
+      <text class='price1'>￥2400</text>
+      <text class='price2'>C2</text>
+      <text>科目三</text>
+    </view>
+  </view>
+</navigator>
+
+<navigator class='list' hover-class='none' url='../details/details'>
+  <view class='list-l'><image src='../../image/r3.png'></image></view>
+  <view class='list-r'>
+    <view class='list-r-img'>
+      <image src='../../image/jiaxiao.png'></image>
+    </view>
+    <view class='l-top'>
+      <text>运通驾校</text>
+      <text class='l-top-r'>距离0.1km</text>
+    </view>
+    <view class='pingfen'><image src='../../image/pingfen.png'></image>4.6分</view>
+    <view class='price'>
+      <text class='price1'>￥2400</text>
+      <text class='price2'>C2</text>
+      <text>科目三</text>
+    </view>
+  </view>
+</navigator>
+
+<navigator class='list' hover-class='none' url='../details/details'>
+  <view class='list-l'>4</view>
+  <view class='list-r'>
+    <view class='list-r-img'>
+      <image src='../../image/jiaxiao.png'></image>
+    </view>
+    <view class='l-top'>
+      <text>运通驾校</text>
+      <text class='l-top-r'>距离0.1km</text>
+    </view>
+    <view class='pingfen'><image src='../../image/pingfen.png'></image>4.6分</view>
+    <view class='price'>
+      <text class='price1'>￥2400</text>
+      <text class='price2'>C2</text>
+      <text>科目三</text>
+    </view>
+  </view>
+</navigator>
+
+<navigator class='list' hover-class='none' url='../details/details'>
+  <view class='list-l'>5</view>
+  <view class='list-r'>
+    <view class='list-r-img'>
+      <image src='../../image/jiaxiao.png'></image>
+    </view>
+    <view class='l-top'>
+      <text>运通驾校</text>
+      <text class='l-top-r'>距离0.1km</text>
+    </view>
+    <view class='pingfen'><image src='../../image/pingfen.png'></image>4.6分</view>
+    <view class='price'>
+      <text class='price1'>￥2400</text>
+      <text class='price2'>C2</text>
+      <text>科目三</text>
+    </view>
+  </view>
+</navigator>

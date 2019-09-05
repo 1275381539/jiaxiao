@@ -1,0 +1,36 @@
+<view class='box'>
+  <view class='tit'><radio color="#0f72d8"></radio> 科目二</view>
+  <view class='con'>
+    <text>100元/学时</text>
+    <view class='btn'>
+      <view>-</view>
+      <view>99</view>
+      <view>+</view>
+    </view>
+  </view>
+</view>
+
+<view class='box'>
+  <view class='tit'><radio color="#0f72d8"></radio> 科目三</view>
+  <view class='con'>
+    <text>100元/学时</text>
+    <view class='btn'>
+      <view>-</view>
+      <view>99</view>
+      <view>+</view>
+    </view>
+  </view>
+</view>
+
+<view class='jieshao'>
+  <view class='jieshao-tit'>科目说明</view>
+  <view class='jieshao-con'>1、介绍介绍介绍介绍介绍介绍介绍</view>
+  <view class='jieshao-con'>2、介绍介绍介绍介绍介绍介绍介绍</view>
+  <view class='jieshao-con'>3、介绍介绍介绍介绍介绍介绍介绍</view>
+  <view class='jieshao-con'>4、介绍介绍介绍介绍介绍介绍介绍</view>
+</view>
+
+ <view class='pay'>
+    <view>共计:2400元/24学时</view>
+    <view class='pay-btn'>立即支付</view>
+ </view>

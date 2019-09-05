@@ -1,0 +1,18 @@
+.list{
+  padding: 50rpx 40rpx;
+  border-bottom: 1px solid #e5e5e5;
+  box-sizing: border-box;
+  font-size: 28rpx;
+  overflow: hidden;
+  color: #333;
+}
+.list image{
+  width: 190rpx;
+  height: 140rpx;
+  vertical-align: middle;
+  margin-right: 30rpx;
+  float: left;
+}
+.list view{
+  margin-top: 30rpx;
+}

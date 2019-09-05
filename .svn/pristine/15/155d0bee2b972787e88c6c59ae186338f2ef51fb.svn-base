@@ -1,0 +1,42 @@
+<page>
+<view class='page'>
+  <view class='list'>
+      <view class="picker">
+        选择驾照：{{jiazhao}}
+      </view>
+  </view>
+
+  <view class='upImg'>
+      <view >上传身份证照片:</view>
+      <button class='img' bindtap="chooseImage" data-id="1"><image src='{{img1}}'></image></button>
+      <button class='img' bindtap="chooseImage" data-id="2"><image src='{{img2}}' ></image></button>
+  </view>
+<view class='news'>
+  <view>
+    <text>姓名：</text>
+    <text>{{news[2]}}</text>
+  </view>
+  <view>
+    <text>性别：</text>
+    <text>{{news[4]}}</text>
+  </view>
+  <view>
+    <text>民族：</text>
+    <text>{{news[5]}}</text>
+  </view>
+  <view>
+    <text>出生：</text>
+    <text>{{news[1]}}</text>
+  </view>
+  <view>
+    <text>地址：</text>
+    <text>{{news[0]}}</text>
+  </view>
+  <view>
+    <text>证件：</text>
+    <text>{{news[3]}}</text>
+  </view>
+</view>
+</view>
+<button class='btn' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">支付建档费</button>
+</page>

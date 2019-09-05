@@ -1,0 +1,258 @@
+/**index.wxss**/
+.top{
+  width: 750rpx;
+  height: 280rpx;
+  margin: 0 auto;
+  background-image: linear-gradient( #ffd34e 60%, #fff);
+}
+.top swiper{
+  width: 700rpx;
+  margin: 0 auto;
+}
+.top image{
+  width: 700rpx;
+  height: 280rpx;
+  border-radius: 20rpx;
+}
+.nav{
+  width: 700rpx;
+  margin: 40rpx auto;  
+}
+.nav navigator{
+  width:25%;
+  display: inline-block;
+  text-align: center;
+  font-size: 24rpx;
+  color: #303030;
+}
+button::after{
+border:none;
+}
+.nav button{
+  border-radius:0;
+  background:none;
+  display: inline-block;
+  padding: 0;
+  width: 25%;
+  text-align: center;
+  font-size: 24rpx;
+  color: #303030;
+  overflow: visible;
+  line-height: normal;
+}
+.nav button image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12rpx;
+}
+.nav image{
+  width: 90rpx;
+  height: 90rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12rpx;
+}
+.guang{
+  width: 700rpx;
+  height: 370rpx;
+  margin: 0 auto;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.2);
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.guang image{
+ width: 700rpx;
+  height: 230rpx;
+  margin-bottom: 30rpx;
+}
+.guang-top,.guang-bot text{
+  padding: 0 50rpx;
+  overflow: hidden;
+}
+.guang-top text:first-child{
+  float: left;
+  font-size: 30rpx;
+  color: #333;
+  font-weight: bold;
+  position: relative;
+}
+.guang-top text:last-child{
+  float: right;
+  color: #999999;
+  font-size: 26rpx;
+}
+.guang-bot text:first-child{
+  color: #666666;
+  font-size: 26rpx;
+}
+.guang-bot text:last-child{
+ color: #f24247;
+ font-size: 26rpx;
+}
+.guang-top text:first-child::before{
+  content: "免";
+  background: #f8ad17;
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top:6rpx;
+  right: -40rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius:4rpx;
+}
+.guang-top text:first-child::after{
+  content: "减";
+  background: #ff4963;
+  width: 30rpx;
+  height: 30rpx;
+  position: absolute;
+  top:6rpx;
+  right: -80rpx;
+  color: #fff;
+  font-size: 24rpx;
+  text-align: center;
+  line-height: 30rpx;
+  border-radius:4rpx;
+}
+
+.mine{
+  width: 700rpx;
+  margin: 50rpx auto;
+  border-radius: 20rpx;
+  box-shadow: 0 0 5rpx 5rpx rgba(215, 215, 215, 0.2);
+}
+.mine-nav{
+  height: 64rpx;
+  text-align: center;
+  font-size: 32rpx;
+  font-weight: bold;
+}
+.mine-nav .mine-tab{
+  width: 27%;
+  display: inline-block;
+  line-height: 64rpx;
+  position: relative;
+}
+.active::after{
+  content: "";
+  width: 70rpx;
+  height: 4rpx;
+  background: #494949;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  margin-left: -35rpx;
+}
+.list{
+  width: 90%;
+  margin: 40rpx auto;
+  margin-top: 0;
+  padding: 40rpx 0;
+  overflow: hidden;
+  border-bottom: 1px solid #e7e7e7;
+}
+.list:last-of-type{
+  border-bottom: none;
+}
+.list-l{
+  float: left;
+}
+.list-r{
+  float: right;
+  font-size: 26rpx;
+  text-align: right;
+  color: #666;
+}
+.list-l image{
+  width: 114rpx;
+  height: 114rpx;
+  margin-right: 16rpx;
+  float: left;
+}
+.list-l .list-l-r{
+  float: left;
+}
+.list-l .tit{
+  font-size: 28rpx;
+  font-weight: bold;
+}
+.list-l .pingfen{
+  font-size: 24rpx;
+  margin-top: 6rpx;
+  overflow: hidden;
+}
+.list-l .pingfen image{
+  width: 26rpx;
+  height: 26rpx;
+  margin-right: 6rpx;
+  margin-top: 4rpx;
+}
+.list-l .price{
+  font-size: 26rpx;
+  margin-top: 16rpx;
+}
+.list-r-b{
+  margin-top: 58rpx;
+}
+.hover{
+  transform: scale(0.8);
+}
+.jz{
+  float: left;
+  background: #ffc34b;
+  width: 19%;
+  border-radius: 10rpx;
+  line-height: 64rpx;
+  height: 64rpx;
+  text-align: center;
+  color: #3a332b;
+  font-weight: bold;
+  position: relative;
+}
+.jz::after{
+  content: "";
+  right: 10rpx;
+  top: 24rpx;
+  position: absolute;
+  border-width: 4px;
+  border-style: solid;
+  border-color:#000 transparent  transparent  transparent ;
+}
+.nav-t{
+  overflow: hidden;
+  margin:20rpx 0;
+}
+.nav-t-tit{
+  font-size: 30rpx;
+  font-weight: bold;
+  color: #333;
+  width: 10%;
+  float: left;
+  display: block;
+  text-align: center;
+  padding:0 2.5%;
+  border-right: 2px solid #ccc;
+}
+.nav-t-bot{
+  float: left;
+  width: 84%;
+}
+.nav-t-con{
+  border: 1px solid #e5e5e5;
+  padding: 0 16rpx;
+  border-radius: 30rpx;
+  margin: 0 20rpx;
+  font-size: 24rpx;
+  display: inline-block;
+}
+.nav-active{
+  background: #ffc34b;
+  border: none;
+}
